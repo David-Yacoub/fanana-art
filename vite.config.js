@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/fanana-art/', 
+  base: '/fanana-art/',
+  build: { outDir: 'docs' } 
 })
