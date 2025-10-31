@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/fanana-art/',  // because your site lives at ...github.io/fanana-art/
-  build: { outDir: 'docs' } // build into /docs for Pages
+  base: '/',              // IMPORTANT for custom domain
+  build: { outDir: 'docs' }  // keep this if you publish from /docs
 })
