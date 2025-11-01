@@ -71,7 +71,7 @@ const Announcements = ({ data }) => {
   }, [data]);
 
   return (
-    <section id="announcements" className="relative z-[1] -mt-16 px-6 sm:px-10 lg:px-12">
+    <section id="announcements" className="relative z-[1] mt-16 px-6 sm:px-10 lg:px-12">
       <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-brand-ink/10 bg-white/70 p-8 shadow-xl backdrop-blur">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>

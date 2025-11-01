@@ -3,24 +3,15 @@ import { Palette, Paintbrush2, Sparkles } from 'lucide-react';
 const featureHighlights = [
   {
     title: 'Small group sessions (3-10)',
-    copy: 'Hands-on guidance in intimate classes sized for 3-10 makers so everyone gets support.',
-    image:
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=60',
-    alt: 'Participants gathered around a creative workshop table'
+    copy: 'Hands-on guidance in intimate classes sized for 3-10 makers so everyone gets support.'
   },
   {
     title: 'All materials provided',
-    copy: 'Premium decoupage papers, paints, and finishes are waiting at your station - just bring yourself.',
-    image:
-      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=60',
-    alt: 'Curated set of decoupage papers and craft supplies'
+    copy: 'Premium decoupage papers, paints, and finishes are ready for you - just bring yourself.'
   },
   {
     title: 'Leave with art you love',
-    copy: 'Finish every session with a completed piece plus the know-how to recreate it at home.',
-    image:
-      'https://images.unsplash.com/photo-1466112928291-0903b80a9466?auto=format&fit=crop&w=900&q=60',
-    alt: 'Handmade box being presented after a workshop'
+    copy: 'Finish every session with a completed piece plus the know-how to recreate it at home.'
   }
 ];
 
@@ -63,20 +54,14 @@ const Hero = ({ onCtaClick }) => (
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featureHighlights.map((feature) => (
           <div
             key={feature.title}
-            className="rounded-3xl border border-brand-ink/5 bg-white/60 p-6 shadow-sm backdrop-blur"
+            className="rounded-3xl border border-brand-ink/10 bg-white/80 p-6 shadow-sm"
           >
-            <div className="relative h-36 overflow-hidden rounded-2xl">
-              <img src={feature.image} alt={feature.alt} className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/40 via-transparent to-transparent" />
-            </div>
-            <div className="mt-4 space-y-2">
-              <h3 className="font-semibold text-brand-forest">{feature.title}</h3>
-              <p className="text-sm text-brand-ink/70">{feature.copy}</p>
-            </div>
+            <h3 className="font-semibold text-brand-forest">{feature.title}</h3>
+            <p className="mt-2 text-sm text-brand-ink/70">{feature.copy}</p>
           </div>
         ))}
       </div>

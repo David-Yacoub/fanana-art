@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react';
 import Hero from './sections/Hero.jsx';
-import Highlights from './sections/Highlights.jsx';
 import Announcements from './sections/Announcements.jsx';
 import Workshops from './sections/Workshops.jsx';
 import Gallery from './sections/Gallery.jsx';
 import About from './sections/About.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
+import TopNav from './components/TopNav.jsx';
+import SpecialGatherings from './sections/SpecialGatherings.jsx';
 import { announcements } from './data/announcements.js';
 import { workshops } from './data/workshops.js';
 
@@ -25,9 +26,10 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-brand-cream pattern-overlay">
+      <TopNav />
       <Hero onCtaClick={handleHeroCta} />
-      <Highlights />
       <Announcements data={announcements} />
+      <SpecialGatherings />
       <Workshops onInterested={handleInterested} />
       <About />
       <Gallery />
