@@ -1,5 +1,23 @@
 import { Feather, Heart, Star } from 'lucide-react';
 
+const pillars = [
+  {
+    icon: Feather,
+    title: 'Thoughtful techniques',
+    copy: 'Build foundational layers, distress finishes, and add bespoke details.'
+  },
+  {
+    icon: Star,
+    title: 'Curated materials',
+    copy: 'Premium European papers, handcrafted stencils, and artist-grade mediums.'
+  },
+  {
+    icon: Heart,
+    title: 'Community focused',
+    copy: 'Work in a warm studio environment that celebrates shared creativity.'
+  }
+];
+
 const About = () => (
   <section id="about" className="mt-24 px-6 sm:px-10 lg:px-12">
     <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-brand-ink/10 bg-white/80 p-10 shadow-lg backdrop-blur">
@@ -7,33 +25,23 @@ const About = () => (
         <div className="space-y-6">
           <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">About Fanana-Art</p>
           <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">
-            Guided by Fananah — Artist, mentor, storyteller
+            Guided by Fananah - artist, mentor, storyteller
           </h2>
           <p className="text-sm leading-relaxed text-brand-ink/75">
-            Inspired by the rich traditions of decoupage and Middle Eastern craft, Fananah founded
-            Fanana-Art to nurture creativity within community. With over a decade of teaching experience,
-            she blends detailed instruction with a gentle, encouraging approach. Sessions are intentionally
-            intimate to give each participant space to explore, experiment, and finish pieces they are proud
-            to display.
+            Inspired by the rich traditions of decoupage and European craft, Fananah founded Fanana-Art to
+            nurture creativity within the Wisla community. With over a decade of teaching experience, she
+            blends detailed instruction with a gentle, encouraging approach. Sessions stay intentionally
+            intimate so every participant can explore, experiment, and complete pieces they are proud to
+            display.
+          </p>
+          <p className="text-sm leading-relaxed text-brand-ink/75">
+            Decoupage is the art of layering paper motifs, paint, and finishing techniques to transform
+            everyday objects into cherished keepsakes. Each workshop walks you through preparing surfaces,
+            composing designs, sealing your work for longevity, and adding tactile accents that make every
+            project uniquely yours.
           </p>
           <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: Feather,
-                title: 'Thoughtful techniques',
-                copy: 'Build foundational layers, distress finishes, and add bespoke details.'
-              },
-              {
-                icon: Star,
-                title: 'Curated materials',
-                copy: 'Premium European papers, handcrafted stencils, and artist-grade mediums.'
-              },
-              {
-                icon: Heart,
-                title: 'Community focused',
-                copy: 'Work in a warm studio environment that celebrates shared creativity.'
-              }
-            ].map((item) => (
+            {pillars.map((item) => (
               <div
                 key={item.title}
                 className="rounded-3xl border border-brand-ink/10 bg-brand-cream/60 p-5 text-sm text-brand-ink/80"

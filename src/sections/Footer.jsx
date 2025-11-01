@@ -19,8 +19,8 @@ const Footer = () => (
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">Studio Hours</p>
           <ul className="mt-3 space-y-1 text-sm text-white/75">
-            <li>Thu – Sat · 10:00 AM – 7:00 PM</li>
-            <li>Sun · 11:00 AM – 5:00 PM</li>
+            <li>Thu - Sat: 10:00 AM - 7:00 PM</li>
+            <li>Sun: 11:00 AM - 5:00 PM</li>
             <li>Private sessions by request</li>
           </ul>
         </div>
@@ -29,9 +29,9 @@ const Footer = () => (
           <p className="mt-3 text-sm text-white/75">
             Fanana-Art Studio
             <br />
-            Warehouse 11, Creative Arts District
+            Wisla Cultural Atelier
             <br />
-            Dubai, UAE
+            Wisla, Poland
           </p>
         </div>
         <div>
@@ -54,7 +54,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-10 border-t border-white/10 pt-4 text-xs text-white/60">
-        © {new Date().getFullYear()} Fanana-Art. Crafted with love in Dubai.
+        (c) {new Date().getFullYear()} Fanana-Art. Crafted with love in Wisla, Poland.
       </div>
     </div>
   </footer>

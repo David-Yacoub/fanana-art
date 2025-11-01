@@ -10,14 +10,18 @@ const iconMap = {
 const AnnouncementCard = ({ announcement }) => {
   const Icon = iconMap[announcement.type] ?? Megaphone;
 
+  const tone =
+    announcement.emphasis === 'high'
+      ? 'border-brand-forest/20 bg-brand-forest/90 text-white'
+      : 'border-brand-ink/10 bg-white/70';
+
   return (
-    <article
-      className={`relative flex h-full flex-col justify-between rounded-3xl border p-6 shadow-sm transition ${
-        announcement.emphasis === 'high'
-          ? 'border-brand-forest/20 bg-brand-forest/90 text-white'
-          : 'border-brand-ink/10 bg-white/70'
-      }`}
-    >
+    <article className={`relative flex h-full flex-col rounded-3xl border p-6 shadow-sm transition ${tone}`}>
+      {announcement.image && (
+        <div className="mb-5 overflow-hidden rounded-2xl">
+          <img src={announcement.image} alt={announcement.title} className="h-36 w-full object-cover" />
+        </div>
+      )}
       <div className="flex items-start gap-4">
         <span
           className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow ${
@@ -30,9 +34,7 @@ const AnnouncementCard = ({ announcement }) => {
         </span>
         <div className="space-y-2">
           <h3 className="font-display text-xl">{announcement.title}</h3>
-          <p className="text-sm leading-relaxed">
-            {announcement.message}
-          </p>
+          <p className="text-sm leading-relaxed">{announcement.message}</p>
         </div>
       </div>
       <div className="mt-6">

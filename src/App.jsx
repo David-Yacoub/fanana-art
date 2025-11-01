@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import Hero from './sections/Hero.jsx';
+import Highlights from './sections/Highlights.jsx';
 import Announcements from './sections/Announcements.jsx';
 import Workshops from './sections/Workshops.jsx';
 import Gallery from './sections/Gallery.jsx';
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-brand-cream pattern-overlay">
       <Hero onCtaClick={handleHeroCta} />
+      <Highlights />
       <Announcements data={announcements} />
       <Workshops onInterested={handleInterested} />
       <About />

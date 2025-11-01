@@ -54,16 +54,16 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
             <p className="text-sm leading-relaxed text-brand-ink/75">
               Share the workshop that caught your eye or tell us about a custom experience you&apos;re
               envisioning. We reply within two business days with availability, materials lists, and next
-              steps.
+              steps. Outgoing sessions for teams of 3-15 makers can also be arranged across southern Poland.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <a
-                href="tel:+1234567890"
+                href="tel:+48501234567"
                 className="flex items-center gap-3 rounded-3xl border border-brand-forest/10 bg-brand-cream/70 px-4 py-3 text-sm font-medium text-brand-forest transition hover:border-brand-forest/40"
               >
                 <Phone className="h-5 w-5" />
-                +1 (234) 567-890
+                +48 501 234 567
               </a>
               <a
                 href="mailto:hello@fanana-art.com"
@@ -74,7 +74,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
               </a>
               <div className="flex items-center gap-3 rounded-3xl border border-brand-forest/10 bg-brand-cream/70 px-4 py-3 text-sm text-brand-ink/80">
                 <MapPin className="h-5 w-5 text-brand-forest" />
-                Dubai Creative Arts District
+                Wisla Cultural Atelier, Poland
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                placeholder="+971 ..."
+                placeholder="+48 ..."
                 className="mt-2 w-full rounded-2xl border border-brand-ink/10 bg-white/90 px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20"
               />
             </label>
