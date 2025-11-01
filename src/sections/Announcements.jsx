@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Sparkles, Megaphone, Gift, Flower } from 'lucide-react';
+import { Gift, Megaphone, Flower } from 'lucide-react';
 
 const iconMap = {
   offer: Gift,
@@ -7,104 +6,66 @@ const iconMap = {
   new: Flower
 };
 
-const AnnouncementCard = ({ announcement }) => {
-  const Icon = iconMap[announcement.type] ?? Megaphone;
-
-  const tone =
-    announcement.emphasis === 'high'
-      ? 'border-brand-forest/20 bg-brand-forest/90 text-white'
-      : 'border-brand-ink/10 bg-white/70';
-
-  return (
-    <article className={`relative flex h-full flex-col rounded-3xl border p-6 shadow-sm transition ${tone}`}>
-      {announcement.image && (
-        <div className="mb-5 overflow-hidden rounded-2xl">
-          <img src={announcement.image} alt={announcement.title} className="h-36 w-full object-cover" />
-        </div>
-      )}
-      <div className="flex items-start gap-4">
-        <span
-          className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow ${
-            announcement.emphasis === 'high'
-              ? 'bg-white/20 text-white'
-              : 'bg-brand-blush/60 text-brand-forest'
-          }`}
-        >
-          <Icon className="h-6 w-6" />
-        </span>
-        <div className="space-y-2">
-          <h3 className="font-display text-xl">{announcement.title}</h3>
-          <p className="text-sm leading-relaxed">{announcement.message}</p>
-        </div>
-      </div>
-      <div className="mt-6">
-        <a
-          href={announcement.link ?? '#contact'}
-          className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wide transition ${
-            announcement.emphasis === 'high'
-              ? 'bg-white/90 text-brand-forest hover:bg-white'
-              : 'bg-brand-forest text-white hover:bg-brand-forest/90'
-          }`}
-        >
-          <Sparkles className="h-4 w-4" />
-          {announcement.cta ?? 'Learn More'}
-        </a>
-      </div>
-    </article>
-  );
+const badgeCopy = {
+  offer: 'Offer',
+  info: 'Update',
+  new: 'New'
 };
 
 const Announcements = ({ data }) => {
-  const [active, setActive] = useState(0);
-  const delay = 6000;
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((idx) => (idx + 1) % data.length);
-    }, delay);
-    return () => clearInterval(timer);
-  }, [data.length]);
-
-  const sortedAnnouncements = useMemo(() => {
-    const rank = (item) => (item.emphasis === 'high' ? 0 : 1);
-    return [...data].sort((a, b) => rank(a) - rank(b));
-  }, [data]);
+  const sorted = [...data].sort((a, b) => (a.priority ?? 1) - (b.priority ?? 1));
 
   return (
-    <section id="announcements" className="relative z-[1] mt-16 px-6 sm:px-10 lg:px-12">
-      <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-brand-ink/10 bg-white/70 p-8 shadow-xl backdrop-blur">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Announcements</p>
-            <h2 className="mt-2 font-display text-3xl text-brand-ink">
-              Latest news & seasonal highlights
-            </h2>
-          </div>
-          <div className="flex gap-2 self-end sm:self-center">
-            {sortedAnnouncements.map((announcement, idx) => (
-              <button
-                key={announcement.id}
-                onClick={() => setActive(idx)}
-                className={`h-2 w-10 rounded-full transition ${
-                  active === idx ? 'bg-brand-forest' : 'bg-brand-forest/20 hover:bg-brand-forest/40'
-                }`}
-              >
-                <span className="sr-only">Show {announcement.title}</span>
-              </button>
-            ))}
-          </div>
+    <section id="announcements" className="mt-16 px-6 sm:px-10 lg:px-12">
+      <div className="mx-auto max-w-5xl space-y-8 rounded-[2.5rem] border border-brand-ink/10 bg-white/80 p-10 shadow-lg backdrop-blur">
+        <div className="space-y-3">
+          <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Announcements</p>
+          <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">
+            What&apos;s new at Fanana-Art
+          </h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-brand-ink/70">
+            Quick highlights for upcoming offers, new courses, and ways to stay connected with the studio.
+          </p>
         </div>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <AnnouncementCard announcement={sortedAnnouncements[active]} />
-          <div className="hidden sm:grid">
-            {sortedAnnouncements
-              .filter((_, idx) => idx !== active)
-              .slice(0, 1)
-              .map((announcement) => (
-                <AnnouncementCard key={announcement.id} announcement={announcement} />
-              ))}
-          </div>
+        <div className="space-y-4">
+          {sorted.map((announcement) => {
+            const Icon = iconMap[announcement.type] ?? Megaphone;
+
+            return (
+              <article
+                key={announcement.id}
+                className="rounded-3xl border border-brand-ink/10 bg-white/90 p-6 shadow-sm"
+              >
+                <div className="flex flex-wrap items-center gap-3 text-sm text-brand-forest">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-forest/10">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="rounded-full border border-brand-forest/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+                    {badgeCopy[announcement.type] ?? 'Update'}
+                  </span>
+                  {announcement.note && (
+                    <span className="rounded-full bg-brand-cream px-3 py-1 text-xs font-medium text-brand-forest/80">
+                      {announcement.note}
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-4 font-display text-xl text-brand-ink">{announcement.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-ink/75">
+                  {announcement.description}
+                </p>
+                {announcement.ctaLabel && (
+                  <a
+                    href={announcement.ctaHref ?? '#contact'}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-forest transition hover:text-brand-forest/80"
+                  >
+                    {announcement.ctaLabel}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,47 +1,42 @@
 export const announcements = [
   {
     id: 'birthday-special',
-    title: 'Birthday workshop packages',
-    message:
-      'Celebrate with a private decoupage party. Gather five guests to unlock a 20% discount on the session fee.',
     type: 'offer',
-    cta: 'Plan a celebration',
-    link: '#contact',
-    emphasis: 'high',
-    image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60'
+    title: 'Birthday workshop packages',
+    description: 'Host a private decoupage celebration. When five or more guests attend, the session total receives a 20% discount.',
+    note: 'Minimum 5 guests, 20% off',
+    ctaLabel: 'Plan a birthday session',
+    ctaHref: '#contact',
+    priority: 0
   },
   {
     id: 'vintage-decoupage',
-    title: 'Vintage decoupage course',
-    message:
-      'Our signature vintage keepsake series returns with new motifs inspired by Wisla antiques.',
     type: 'new',
-    cta: 'View schedule',
-    link: '#workshops',
-    image:
-      'https://images.unsplash.com/photo-1515560570411-00a0026e6086?auto=format&fit=crop&w=900&q=60'
+    title: 'Vintage decoupage course',
+    description: 'A refreshed three-part series inspired by Wisla antiques. Learn surface prep, motif layering, and finishing techniques.',
+    note: 'Starts March 1',
+    ctaLabel: 'View schedule',
+    ctaHref: '#workshops',
+    priority: 1
   },
   {
     id: 'womens-day',
-    title: "Women's Day gathering",
-    message:
-      'Design a meaningful experience for at least five women in your team or family this March.',
     type: 'info',
-    cta: 'Reserve spots',
-    link: '#contact',
-    image:
-      'https://images.unsplash.com/photo-1523803326055-9729b9d5a092?auto=format&fit=crop&w=900&q=60'
+    title: "Women's Day gathering",
+    description: 'Invite at least five women from your team or family for a creative studio experience tailored to your theme.',
+    note: 'Bookings open for March',
+    ctaLabel: 'Reserve spots',
+    ctaHref: '#contact',
+    priority: 2
   },
   {
     id: 'gift-voucher',
-    title: 'Gift a creative voucher',
-    message:
-      'One-to-one decoupage sessions with custom projects perfect for birthdays or anniversaries.',
     type: 'info',
-    cta: 'Purchase voucher',
-    link: '#contact',
-    image:
-      'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?auto=format&fit=crop&w=900&q=60'
+    title: 'Gift a creative voucher',
+    description: 'Treat someone to a one-to-one decoupage session, scheduled around their availability and interests.',
+    note: 'Personalised 1:1 session',
+    ctaLabel: 'Purchase a voucher',
+    ctaHref: '#contact',
+    priority: 3
   }
 ];
