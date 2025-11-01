@@ -28,8 +28,8 @@ const About = () => (
             Guided by Fananah - artist, mentor, storyteller
           </h2>
           <p className="text-sm leading-relaxed text-brand-ink/75">
-            Inspired by the rich traditions of decoupage and European craft, Fananah founded Fanana-Art to
-            nurture creativity within the Wisla community. With over a decade of teaching experience, she
+            Inspired by the rich traditions of decoupage and European craft, Ania founded Fanana-Art to
+            nurture creativity within the Wisła community. With over a decade of teaching experience, she
             blends detailed instruction with a gentle, encouraging approach. Sessions stay intentionally
             intimate so every participant can explore, experiment, and complete pieces they are proud to
             display.

@@ -1,8 +1,8 @@
 import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 const socials = [
-  { id: 'instagram', label: '@fanana.art', icon: Instagram, link: 'https://instagram.com' },
-  { id: 'facebook', label: 'Fanana-Art Studio', icon: Facebook, link: 'https://facebook.com' },
+  { id: 'instagram', label: '@fanana.art', icon: Instagram, link: 'https://www.instagram.com/fanana_art.workshop/' },
+  { id: 'facebook', label: 'Fanana-Art Workshop', icon: Facebook, link: 'https://facebook.com' },
   { id: 'youtube', label: 'Creative Sessions', icon: Youtube, link: 'https://youtube.com' }
 ];
 
@@ -27,11 +27,11 @@ const Footer = () => (
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">Visit</p>
           <p className="mt-3 text-sm text-white/75">
-            Fanana-Art Studio
+            Fanana-Art Workshop
             <br />
-            Wisla Cultural Atelier
+            Wisła Centrum
             <br />
-            Wisla, Poland
+            Wisła, Poland
           </p>
         </div>
         <div>
