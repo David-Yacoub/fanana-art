@@ -10,13 +10,13 @@ export const announcements = [
     priority: 0
   },
   {
-    id: 'vintage-decoupage',
-    type: 'new',
-    title: 'Vintage decoupage course',
-    description: 'A refreshed three-part series inspired by Wisla antiques. Learn surface prep, motif layering, and finishing techniques.',
-    note: 'Starts March 1',
-    ctaLabel: 'View schedule',
-    ctaHref: '#workshops',
+    id: 'education-offers',
+    type: 'offer',
+    title: 'Offers for kindergarten and schools',
+    description: 'Bring decoupage into the classroom with travelling workshops tailored to young makers. We provide all materials, guided activities, and simple take-home projects.',
+    note: 'Flexible in-school sessions',
+    ctaLabel: 'Request a school visit',
+    ctaHref: '#contact',
     priority: 1
   },
   {
