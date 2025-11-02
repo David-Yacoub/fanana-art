@@ -7,7 +7,6 @@ import About from './sections/About.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
 import TopNav from './components/TopNav.jsx';
-import SpecialGatherings from './sections/SpecialGatherings.jsx';
 import { announcements } from './data/announcements.js';
 import { workshops } from './data/workshops.js';
 
@@ -29,7 +28,6 @@ const App = () => {
       <TopNav />
       <Hero onCtaClick={handleHeroCta} />
       <Announcements data={announcements} />
-      <SpecialGatherings />
       <Workshops onInterested={handleInterested} />
       <About />
       <Gallery />

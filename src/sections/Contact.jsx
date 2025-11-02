@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useMemo, useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
 
 const initialFormState = {
   name: '',
@@ -76,6 +76,15 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
                 <MapPin className="h-5 w-5 text-brand-forest" />
                 Wisla Cultural Atelier, Poland
               </div>
+              <a
+                href="https://chat.whatsapp.com/FananaArtCommunity"
+                className="flex items-center gap-3 rounded-3xl border border-brand-forest/10 bg-brand-cream/70 px-4 py-3 text-sm font-medium text-brand-forest transition hover:border-brand-forest/40"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle className="h-5 w-5" />
+                Join the WhatsApp group
+              </a>
             </div>
           </div>
 
