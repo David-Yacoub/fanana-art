@@ -17,10 +17,6 @@ export default {
           forest: '#3a5a40',
           ink: '#1f1f23'
         }
-      },
-      backgroundImage: {
-        'paper-texture':
-          "url('https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=1200&q=60')"
       }
     }
   },
