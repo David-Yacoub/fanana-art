@@ -38,5 +38,10 @@ export const galleryItems = [
     id: 'gallery-pastel-clock',
     title: 'Pastel bloom clock',
     image: '/images/gallery-pastel-clock.jpg'
+  },
+  {
+    id: 'gallery-golden-clock',
+    title: 'Golden blooms clock',
+    image: '/images/Galeria7e.png'
   }
 ];
