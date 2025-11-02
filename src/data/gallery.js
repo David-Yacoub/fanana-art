@@ -1,38 +1,42 @@
 export const galleryItems = [
   {
-    id: 'gallery-1',
-    title: 'Layered Floral Keepsake Box',
-    image:
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-love-beyond-words',
+    title: 'Love Beyond Words plaque',
+    image: '/images/gallery-love-beyond-words.jpg'
   },
   {
-    id: 'gallery-2',
-    title: 'Botanical Glass Plate',
-    image:
-      'https://images.unsplash.com/photo-1520174691701-bc555a3404ca?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-live-every-moment',
+    title: 'Live Every Moment plaque',
+    image: '/images/gallery-live-every-moment.jpg'
   },
   {
-    id: 'gallery-3',
-    title: 'Mixed Media Canvas Story',
-    image:
-      'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-journey-quote',
+    title: 'Journey Begins quote plaque',
+    image: '/images/gallery-journey-quote.jpg'
   },
   {
-    id: 'gallery-4',
-    title: 'Family Memory Collage',
-    image:
-      'https://images.unsplash.com/photo-1503600373662-6183523edb29?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-marble-box',
+    title: 'Ocean Marble keepsake box',
+    image: '/images/gallery-marble-box.jpg'
   },
   {
-    id: 'gallery-5',
-    title: 'Handcrafted Gift Tags',
-    image:
-      'https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-lavender-box',
+    title: 'Lavender keepsake box',
+    image: '/images/gallery-lavender-box.jpg'
   },
   {
-    id: 'gallery-6',
-    title: 'Textured Spring Tray',
-    image:
-      'https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?auto=format&fit=crop&w=900&q=60'
+    id: 'gallery-floral-box',
+    title: 'Floral keepsake box',
+    image: '/images/gallery-floral-box.jpg'
+  },
+  {
+    id: 'gallery-rose-clock',
+    title: 'Rose garden clock',
+    image: '/images/gallery-rose-clock.jpg'
+  },
+  {
+    id: 'gallery-pastel-clock',
+    title: 'Pastel bloom clock',
+    image: '/images/gallery-pastel-clock.jpg'
   }
 ];

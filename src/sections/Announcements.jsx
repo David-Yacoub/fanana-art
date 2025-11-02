@@ -42,41 +42,53 @@ const Announcements = ({ data }) => {
               return (
                 <article
                   key={announcement.id}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-brand-ink/10 bg-white/95 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-brand-ink/10 bg-white/95 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  style={
+                    announcement.image
+                      ? {
+                          backgroundImage: `url(${announcement.image})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center'
+                        }
+                      : undefined
+                  }
+                  aria-label={announcement.title}
                 >
                   <div className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-brand-forest/20 transition group-hover:bg-brand-forest/40" />
-                  <div className="flex items-start gap-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-forest/10 text-brand-forest">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <div className="space-y-2">
-                      <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-forest">
-                        <span className="rounded-full bg-brand-forest/10 px-3 py-1">
-                          {badgeCopy[announcement.type] ?? 'Update'}
-                        </span>
-                        {announcement.note && (
-                          <span className="rounded-full border border-brand-forest/15 px-3 py-1 text-brand-forest/80">
-                            {announcement.note}
+                  <div className={announcement.image ? 'relative rounded-2xl bg-white/92 p-6 backdrop-blur-sm' : 'p-6'}>
+                    <div className="flex items-start gap-3">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-forest/10 text-brand-forest">
+                        <Icon className="h-6 w-6" />
+                      </span>
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-forest">
+                          <span className="rounded-full bg-brand-forest/10 px-3 py-1">
+                            {badgeCopy[announcement.type] ?? 'Update'}
                           </span>
-                        )}
+                          {announcement.note && (
+                            <span className="rounded-full border border-brand-forest/15 px-3 py-1 text-brand-forest/80">
+                              {announcement.note}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="font-display text-xl text-brand-ink group-hover:text-brand-forest">
+                          {announcement.title}
+                        </h3>
                       </div>
-                      <h3 className="font-display text-xl text-brand-ink group-hover:text-brand-forest">
-                        {announcement.title}
-                      </h3>
                     </div>
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-brand-ink/75">
+                      {announcement.description}
+                    </p>
+                    {announcement.ctaLabel && (
+                      <a
+                        href={announcement.ctaHref ?? '#contact'}
+                        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-forest transition hover:text-brand-forest/80"
+                      >
+                        {announcement.ctaLabel}
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    )}
                   </div>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-brand-ink/75">
-                    {announcement.description}
-                  </p>
-                  {announcement.ctaLabel && (
-                    <a
-                      href={announcement.ctaHref ?? '#contact'}
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-forest transition hover:text-brand-forest/80"
-                    >
-                      {announcement.ctaLabel}
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  )}
                 </article>
               );
             })}

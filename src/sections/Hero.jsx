@@ -3,11 +3,15 @@ import { Palette, Paintbrush2, Sparkles } from 'lucide-react';
 const featureHighlights = [
   {
     title: 'Small group sessions (3-10)',
-    copy: 'Hands-on guidance in intimate classes sized for 3-10 makers so everyone gets support.'
+    copy: 'Hands-on guidance in intimate classes sized for 3-10 makers so everyone gets support.',
+    image: '/images/hero-small-group.jpg',
+    alt: 'Warsztaty dla dzieci i dorosłych'
   },
   {
     title: 'All materials provided',
-    copy: 'Premium decoupage papers, paints, and finishes are ready for you - just bring yourself.'
+    copy: 'Premium decoupage papers, paints, and finishes are ready for you - just bring yourself.',
+    image: '/images/hero-materials.jpg',
+    alt: 'Profesjonalne materiały do decoupage'
   },
   {
     title: 'Leave with art you love',
@@ -59,9 +63,21 @@ const Hero = ({ onCtaClick }) => (
           <div
             key={feature.title}
             className="rounded-3xl border border-brand-ink/10 bg-white/80 p-6 shadow-sm"
+            style={
+              feature.image
+                ? {
+                    backgroundImage: `url(${feature.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }
+                : undefined
+            }
+            aria-label={feature.alt ?? feature.title}
           >
-            <h3 className="font-semibold text-brand-forest">{feature.title}</h3>
-            <p className="mt-2 text-sm text-brand-ink/70">{feature.copy}</p>
+            <div className={feature.image ? 'rounded-2xl bg-white/85 p-4 backdrop-blur' : undefined}>
+              <h3 className="font-semibold text-brand-forest">{feature.title}</h3>
+              <p className="mt-2 text-sm text-brand-ink/70">{feature.copy}</p>
+            </div>
           </div>
         ))}
       </div>

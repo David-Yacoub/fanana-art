@@ -17,6 +17,7 @@ export const announcements = [
     note: 'Flexible in-school sessions',
     ctaLabel: 'Request a school visit',
     ctaHref: '#contact',
+    image: '/images/announcement-education.jpg',
     priority: 1
   },
   {
@@ -27,6 +28,7 @@ export const announcements = [
     note: 'Bookings open for March',
     ctaLabel: 'Reserve spots',
     ctaHref: '#contact',
+    image: '/images/announcement-womens-day.jpg',
     priority: 2
   },
   {
@@ -37,6 +39,7 @@ export const announcements = [
     note: 'Personalised 1:1 session',
     ctaLabel: 'Purchase a voucher',
     ctaHref: '#contact',
+    image: '/images/announcement-voucher.jpg',
     priority: 3
   }
 ];
