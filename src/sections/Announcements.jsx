@@ -46,13 +46,12 @@ const Announcements = ({ data }) => {
                   aria-label={announcement.title}
                 >
                   {announcement.image && (
-                    <div className="relative h-40 w-full overflow-hidden">
+                    <div className="flex h-48 w-full items-center justify-center bg-white">
                       <img
                         src={announcement.image}
                         alt={announcement.title}
-                        className="h-full w-full object-cover"
+                        className="max-h-full w-full object-contain"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/30 via-transparent to-transparent" />
                     </div>
                   )}
                   <div className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-brand-forest/20 transition group-hover:bg-brand-forest/40" />
