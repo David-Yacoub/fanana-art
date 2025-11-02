@@ -7,7 +7,6 @@ import About from './sections/About.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
 import TopNav from './components/TopNav.jsx';
-import UpcomingSessions from './components/UpcomingSessions.jsx';
 import { announcements } from './data/announcements.js';
 import { workshops } from './data/workshops.js';
 
@@ -30,7 +29,6 @@ const App = () => {
       <Hero onCtaClick={handleHeroCta} />
       <Announcements data={announcements} />
       <Workshops onInterested={handleInterested} />
-      <UpcomingSessions />
       <About />
       <Gallery />
       <Contact ref={contactRef} workshops={workshops} selectedWorkshop={selectedWorkshop} />

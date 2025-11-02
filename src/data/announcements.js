@@ -7,6 +7,7 @@ export const announcements = [
     note: 'Minimum 5 guests, 20% off',
     ctaLabel: 'Plan a birthday session',
     ctaHref: '#contact',
+    image: '/images/gallery-live-every-moment.jpg',
     priority: 0
   },
   {

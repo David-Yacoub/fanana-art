@@ -42,20 +42,21 @@ const Announcements = ({ data }) => {
               return (
                 <article
                   key={announcement.id}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-brand-ink/10 bg-white/95 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-                  style={
-                    announcement.image
-                      ? {
-                          backgroundImage: `url(${announcement.image})`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center'
-                        }
-                      : undefined
-                  }
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-brand-ink/10 bg-white/95 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                   aria-label={announcement.title}
                 >
+                  {announcement.image && (
+                    <div className="relative h-40 w-full overflow-hidden">
+                      <img
+                        src={announcement.image}
+                        alt={announcement.title}
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/30 via-transparent to-transparent" />
+                    </div>
+                  )}
                   <div className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-brand-forest/20 transition group-hover:bg-brand-forest/40" />
-                  <div className={announcement.image ? 'relative rounded-2xl bg-white/92 p-6 backdrop-blur-sm' : 'p-6'}>
+                  <div className="space-y-4 p-6">
                     <div className="flex items-start gap-3">
                       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-forest/10 text-brand-forest">
                         <Icon className="h-6 w-6" />

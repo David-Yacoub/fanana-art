@@ -15,13 +15,23 @@ const featureHighlights = [
   },
   {
     title: 'Leave with art you love',
-    copy: 'Finish every session with a completed piece plus the know-how to recreate it at home.'
+    copy: 'Finish every session with a completed piece plus the know-how to recreate it at home.',
+    image: '/images/gallery-floral-box.jpg',
+    alt: 'Dekoracyjna szkatułka wykonana podczas warsztatów'
   }
 ];
 
 const Hero = ({ onCtaClick }) => (
   <section className="relative overflow-hidden bg-brand-cream">
-    <div className="absolute inset-0 opacity-10 mix-blend-multiply bg-paper-texture" />
+    <div
+      className="absolute inset-0 opacity-20"
+      style={{
+        backgroundImage: "url('/images/gallery-lavender-box.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    />
+    <div className="absolute inset-0 opacity-60 mix-blend-multiply bg-paper-texture" />
     <div className="absolute inset-y-0 -left-24 hidden w-64 rotate-12 bg-brand-blush/60 blur-3xl sm:block" />
     <div className="absolute inset-y-0 -right-32 hidden w-72 -rotate-12 bg-brand-clay/50 blur-3xl lg:block" />
 
@@ -62,19 +72,19 @@ const Hero = ({ onCtaClick }) => (
         {featureHighlights.map((feature) => (
           <div
             key={feature.title}
-            className="rounded-3xl border border-brand-ink/10 bg-white/80 p-6 shadow-sm"
-            style={
-              feature.image
-                ? {
-                    backgroundImage: `url(${feature.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }
-                : undefined
-            }
-            aria-label={feature.alt ?? feature.title}
+            className="rounded-3xl border border-brand-ink/10 bg-white/80 shadow-sm overflow-hidden"
           >
-            <div className={feature.image ? 'rounded-2xl bg-white/85 p-4 backdrop-blur' : undefined}>
+            {feature.image && (
+              <div className="relative h-40 w-full overflow-hidden">
+                <img
+                  src={feature.image}
+                  alt={feature.alt ?? feature.title}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/40 via-transparent to-transparent" />
+              </div>
+            )}
+            <div className="space-y-2 p-6">
               <h3 className="font-semibold text-brand-forest">{feature.title}</h3>
               <p className="mt-2 text-sm text-brand-ink/70">{feature.copy}</p>
             </div>
