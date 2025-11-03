@@ -18,7 +18,7 @@ export const announcements = [
     note: 'Flexible in-school sessions',
     ctaLabel: 'Request a school visit',
     ctaHref: '#contact',
-    image: '/images/ahero-small-group.jpg',
+    image: '/images/announcement-education.jpg',
     priority: 1
   },
   {

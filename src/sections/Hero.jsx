@@ -4,7 +4,7 @@ const featureHighlights = [
   {
     title: 'Small group sessions (3-10)',
     copy: 'Hands-on guidance in intimate classes sized for 3-10 makers so everyone gets support.',
-    image: '/images/announcement-education.jpg',
+    image: '/images/hero-small-group.jpg',
     alt: 'Warsztaty dla dzieci i dorosłych'
   },
   {
