@@ -62,7 +62,7 @@ const Workshops = ({ onInterested }) => {
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Hands-on sessions</p>
             <h2 className="mt-2 font-display text-3xl text-brand-ink sm:text-4xl">
-              Explore upcoming workshops
+              Explore Our workshops
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-ink/70">
               Every workshop includes step-by-step demos, guided practice, and curated materials.

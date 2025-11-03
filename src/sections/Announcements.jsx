@@ -7,7 +7,7 @@ const iconMap = {
 };
 
 const badgeCopy = {
-  offer: 'Offer',
+  offer: 'Activity',
   info: 'Update',
   new: 'New'
 };
@@ -16,7 +16,7 @@ const Announcements = ({ data }) => {
   const sorted = [...data].sort((a, b) => (a.priority ?? 1) - (b.priority ?? 1));
 
   return (
-    <section id="announcements" className="mt-16 px-6 sm:px-10 lg:px-12">
+    <section id="activities" className="mt-16 px-6 sm:px-10 lg:px-12">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] border border-brand-ink/10 bg-white/85 shadow-xl backdrop-blur">
         <div className="absolute -top-32 -right-20 h-64 w-64 rounded-full bg-brand-blush/20 blur-3xl" />
         <div className="absolute -bottom-20 -left-24 h-56 w-56 rounded-full bg-brand-forest/10 blur-3xl" />
@@ -24,14 +24,11 @@ const Announcements = ({ data }) => {
         <div className="relative space-y-10 px-8 py-12 sm:px-12 lg:px-16">
           <div className="max-w-3xl space-y-4">
             <span className="inline-flex rounded-full bg-brand-forest/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-brand-forest">
-              Announcements
+              Activities
             </span>
-            <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">
-              What&apos;s new at Fanana-Art
-            </h2>
+            <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">Explore our activities</h2>
             <p className="text-sm leading-relaxed text-brand-ink/70">
-              Stay in the loop with current offers, outreach programmes, and special gatherings you can join
-              right now.
+              Discover studio sessions, outreach programmes, and seasonal gatherings you can reserve today.
             </p>
           </div>
 
@@ -63,7 +60,7 @@ const Announcements = ({ data }) => {
                       <div className="space-y-2">
                         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-forest">
                           <span className="rounded-full bg-brand-forest/10 px-3 py-1">
-                            {badgeCopy[announcement.type] ?? 'Update'}
+                            {badgeCopy[announcement.type] ?? 'Activity'}
                           </span>
                           {announcement.note && (
                             <span className="rounded-full border border-brand-forest/15 px-3 py-1 text-brand-forest/80">
@@ -85,7 +82,7 @@ const Announcements = ({ data }) => {
                         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-forest transition hover:text-brand-forest/80"
                       >
                         {announcement.ctaLabel}
-                        <span aria-hidden="true">→</span>
+                        <span aria-hidden="true">-&gt;</span>
                       </a>
                     )}
                   </div>

@@ -59,11 +59,11 @@ const Hero = ({ onCtaClick }) => (
             View Workshops
           </button>
           <a
-            href="#announcements"
+            href="#activities"
             className="inline-flex items-center gap-2 rounded-full border border-brand-ink/10 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-brand-ink transition hover:border-brand-forest hover:text-brand-forest"
           >
             <Palette className="h-5 w-5" />
-            Latest Announcements
+            Activities
           </a>
         </div>
       </div>
