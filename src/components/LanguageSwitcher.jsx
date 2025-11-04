@@ -1,6 +1,6 @@
 const LanguageSwitcher = () => {
   const handlePolishRedirect = () => {
-    window.location.href = 'https://www.fanana-art.pl';
+    window.location.href = 'https://www.fanana-art.com';
   };
 
   return (
