@@ -1,4 +1,5 @@
 const navItems = [
+  { label: 'Schedule', href: '#schedule' },
   { label: 'Workshops', href: '#workshops' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },

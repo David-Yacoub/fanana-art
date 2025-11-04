@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import Hero from './sections/Hero.jsx';
+import Schedule from './sections/Schedule.jsx';
 import Announcements from './sections/Announcements.jsx';
 import Workshops from './sections/Workshops.jsx';
 import Gallery from './sections/Gallery.jsx';
@@ -20,13 +21,14 @@ const App = () => {
   };
 
   const handleHeroCta = () => {
-    document.getElementById('workshops')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <div className="min-h-screen bg-brand-cream pattern-overlay">
       <TopNav />
       <Hero onCtaClick={handleHeroCta} />
+      <Schedule />
       <Announcements data={announcements} />
       <Workshops onInterested={handleInterested} />
       <About />
