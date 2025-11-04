@@ -15,7 +15,7 @@ export const workshops = [
     price: 45,
     difficulty: 'Beginner',
     type: 'Decoupage',
-    highlight: 'Most Loved by Newcomers',
+    highlight: 'For the beginners',
     image:
       'https://images.unsplash.com/photo-1582558019254-7d6c852f530f?auto=format&fit=crop&w=900&q=60',
     dateTimes: [
