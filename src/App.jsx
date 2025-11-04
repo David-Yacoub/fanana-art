@@ -8,6 +8,7 @@ import About from './sections/About.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
 import TopNav from './components/TopNav.jsx';
+import LanguageSwitcher from './components/LanguageSwitcher.jsx';
 import { announcements } from './data/announcements.js';
 import { workshops } from './data/workshops.js';
 
@@ -26,6 +27,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-brand-cream pattern-overlay">
+      <LanguageSwitcher />
       <TopNav />
       <Hero onCtaClick={handleHeroCta} />
       <Schedule />
