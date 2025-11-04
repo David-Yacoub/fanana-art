@@ -24,11 +24,11 @@ const toIsoFromDateTime = (date, time) => {
 };
 
 const WorkshopCard = ({ workshop, onInterested: _onInterested }) => {
-  const schedulesFromDateTimes = Array.isArray(workshop.dateTimes)
-    ? workshop.dateTimes
-        .map((slot) => toIsoFromDateTime(slot.date, slot.time))
-        .filter(Boolean)
-    : [];
+  const upcomingSlots = Array.isArray(workshop.dateTimes) ? workshop.dateTimes : [];
+
+  const schedulesFromDateTimes = upcomingSlots
+    .map((slot) => toIsoFromDateTime(slot.date, slot.time))
+    .filter(Boolean);
 
   const normalizedEvent =
     schedulesFromDateTimes.length > 0
@@ -36,12 +36,19 @@ const WorkshopCard = ({ workshop, onInterested: _onInterested }) => {
       : workshop;
 
   const dateIso = pickUpcomingDate(normalizedEvent);
-  const bookingUrl = buildBookingUrl({
-    title: workshop.title,
-    dateIso,
-    city: workshop.city ?? workshop.location?.city ?? ''
-  });
+  const bookingUrl =
+    workshop.bookingUrl ||
+    buildBookingUrl({
+      title: workshop.title,
+      dateIso,
+      city: workshop.city ?? workshop.location?.city ?? ''
+    });
   const isDisabled = !bookingUrl;
+  const priceDisplay =
+    workshop.priceDisplay ??
+    (typeof workshop.price === 'number' ? `${workshop.price} PLN` : 'To be confirmed');
+  const ctaLabel = workshop.ctaLabel ?? 'Reserve your spot';
+  const ctaDisabledLabel = workshop.ctaDisabledLabel ?? ctaLabel;
 
   return (
     <article className="group relative overflow-hidden rounded-3xl border border-brand-ink/10 bg-white/80 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-xl">
@@ -90,7 +97,16 @@ const WorkshopCard = ({ workshop, onInterested: _onInterested }) => {
             <Wallet className="h-4 w-4 text-brand-forest" />
             <div>
               <dt className="font-semibold text-brand-forest">Investment</dt>
-              <dd>${workshop.price}</dd>
+              <dd>
+                {priceDisplay}
+                {Array.isArray(workshop.pricingDetails) && workshop.pricingDetails.length > 0 && (
+                  <ul className="mt-1 space-y-1 text-xs text-brand-ink/60">
+                    {workshop.pricingDetails.map((line) => (
+                      <li key={`${workshop.id}-${line}`}>{line}</li>
+                    ))}
+                  </ul>
+                )}
+              </dd>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-2xl bg-brand-cream/60 px-3 py-2">
@@ -105,9 +121,22 @@ const WorkshopCard = ({ workshop, onInterested: _onInterested }) => {
             <div>
               <dt className="font-semibold text-brand-forest">Upcoming</dt>
               <dd className="space-y-1">
-                {workshop.dateTimes.map((slot) => (
-                  <p key={`${workshop.id}-${slot.date}-${slot.time}`}>{format(slot.date)} - {slot.time}</p>
-                ))}
+                {upcomingSlots.map((slot, index) => {
+                  const key = slot.display ?? `${slot.date ?? 'unscheduled'}-${slot.time ?? index}`;
+                  const label =
+                    slot.display ??
+                    (() => {
+                      if (!slot?.date) {
+                        return 'Date to be arranged';
+                      }
+                      const formatted = format(slot.date);
+                      if (!slot?.time) {
+                        return formatted;
+                      }
+                      return `${formatted} - ${slot.time}`;
+                    })();
+                  return <p key={`${workshop.id}-${key}`}>{label}</p>;
+                })}
               </dd>
             </div>
           </div>
@@ -118,15 +147,15 @@ const WorkshopCard = ({ workshop, onInterested: _onInterested }) => {
             aria-disabled="true"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-forest px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white opacity-50"
           >
-            Zapisz się
+            {ctaDisabledLabel}
           </span>
         ) : (
           <a
             href={bookingUrl}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-forest px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow transition hover:bg-brand-forest/90"
-            aria-label={`Zapisz się na ${workshop.title}`}
+            aria-label={`${ctaLabel} for ${workshop.title}`}
           >
-            Zapisz się
+            {ctaLabel}
           </a>
         )}
       </div>
