@@ -1,4 +1,8 @@
 const LanguageSwitcher = () => {
+  const handleEnglishRedirect = () => {
+    window.location.href = 'https://www.fanana-art.com';
+  };
+
   const handlePolishRedirect = () => {
     window.location.href = 'https://www.fanana-art.pl';
   };
@@ -11,8 +15,9 @@ const LanguageSwitcher = () => {
           <button
             type="button"
             aria-current="true"
-            aria-label="English (current language)"
-            className="rounded-full border border-brand-forest bg-white px-3 py-1 text-brand-forest transition"
+            aria-label="Switch to English (current language)"
+            onClick={handleEnglishRedirect}
+            className="rounded-full border border-brand-forest bg-white px-3 py-1 text-brand-forest transition hover:bg-brand-forest hover:text-white"
           >
             EN
           </button>
