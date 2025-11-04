@@ -18,8 +18,7 @@ export const workshops = [
     difficulty: 'Beginner',
     type: 'Decoupage',
     highlight: 'For the beginners',
-    image:
-      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=60',
+    image: '/images/Earings_workshop.jpg',
     ctaLabel: 'Reserve a date',
     ctaDisabledLabel: 'Reserve a date',
     dateTimes: [
@@ -41,8 +40,7 @@ export const workshops = [
     difficulty: 'Beginner',
     type: 'Decoupage',
     highlight: 'Reserve a Date',
-    image:
-      'https://images.unsplash.com/photo-1516054719242-0b76e0d5bbd1?auto=format&fit=crop&w=900&q=60',
+    image: '/images/candle_workshop.jpg',
     ctaLabel: 'Reserve a date',
     ctaDisabledLabel: 'Reserve a date',
     bookingUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfiqikccQwYxGbdG8LOCpKB9KzWIriDWBS8vajRFQKSv-kmTg/viewform',
