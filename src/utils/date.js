@@ -1,6 +1,6 @@
-const formatter = new Intl.DateTimeFormat('en-US', {
-  month: 'short',
+const formatter = new Intl.DateTimeFormat('pl-PL', {
   day: 'numeric',
+  month: 'long',
   year: 'numeric'
 });
 

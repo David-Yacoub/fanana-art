@@ -89,7 +89,7 @@ const UpcomingSessions = () => {
             event.pricePLN != null ? `${event.pricePLN} PLN` : null
           ]
             .filter(Boolean)
-            .join(' · ');
+            .join(' • ');
 
           return (
             <li
@@ -106,7 +106,7 @@ const UpcomingSessions = () => {
                   <p className="text-sm text-brand-ink/70">{details}</p>
                   {event.seatsLeft != null && (
                     <p className="text-xs font-medium uppercase tracking-wide text-brand-forest">
-                      Pozostało miejsc: {event.seatsLeft}
+                      Dostępne miejsca: {event.seatsLeft}
                     </p>
                   )}
                 </div>
@@ -130,10 +130,7 @@ const UpcomingSessions = () => {
   }, [events, status]);
 
   return (
-    <section
-      aria-labelledby="upcoming"
-      className="mt-24 px-6 sm:px-10 lg:px-12"
-    >
+    <section aria-labelledby="upcoming" className="mt-24 px-6 sm:px-10 lg:px-12">
       <div className="mx-auto max-w-3xl rounded-[2rem] border border-brand-ink/10 bg-white/80 p-6 shadow-lg backdrop-blur">
         <div className="space-y-2">
           <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Harmonogram</p>
@@ -141,8 +138,8 @@ const UpcomingSessions = () => {
             Najbliższe warsztaty
           </h2>
           <p className="text-sm text-brand-ink/70">
-            Rezerwuj miejsce, zanim zapełnią się wszystkie miejsca. Każdy termin zawiera w cenie materiały i
-            opiekę instruktora.
+            Rezerwuj miejsce, zanim zapełnią się wszystkie terminy. Każde spotkanie obejmuje materiały i opiekę
+            instruktora.
           </p>
         </div>
         {content}

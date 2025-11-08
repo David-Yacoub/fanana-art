@@ -8,6 +8,7 @@ import About from './sections/About.jsx';
 import Contact from './sections/Contact.jsx';
 import Footer from './sections/Footer.jsx';
 import TopNav from './components/TopNav.jsx';
+import FloatingChat from './components/FloatingChat.jsx';
 import { announcements } from './data/announcements.js';
 import { workshops } from './data/workshops.js';
 
@@ -16,7 +17,8 @@ const App = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
 
   const handleInterested = (workshop) => {
-    setSelectedWorkshop(workshop);
+    if (!workshop) return;
+    setSelectedWorkshop({ ...workshop });
     contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -29,12 +31,13 @@ const App = () => {
       <TopNav />
       <Hero onCtaClick={handleHeroCta} />
       <Schedule />
-      <Announcements data={announcements} />
+      <Announcements data={announcements} onInterested={handleInterested} />
       <Workshops onInterested={handleInterested} />
       <About />
       <Gallery />
       <Contact ref={contactRef} workshops={workshops} selectedWorkshop={selectedWorkshop} />
       <Footer />
+      <FloatingChat />
     </div>
   );
 };

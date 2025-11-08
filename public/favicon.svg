@@ -1,12 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#f6d6d6"/>
-      <stop offset="100%" stop-color="#3a5a40"/>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffbe9"/>
+      <stop offset="100%" stop-color="#f8f1d8"/>
+    </linearGradient>
+    <linearGradient id="topGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9cc3cf"/>
+      <stop offset="50%" stop-color="#6f98aa"/>
+      <stop offset="100%" stop-color="#587b88"/>
+    </linearGradient>
+    <linearGradient id="frontGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#88b3c0"/>
+      <stop offset="100%" stop-color="#567884"/>
+    </linearGradient>
+    <linearGradient id="sideGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ca6b4"/>
+      <stop offset="100%" stop-color="#4f707c"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#f9f5f0"/>
-  <path d="M14 42c4-10 14-20 30-24 4 8-2 24-12 30-8 4-14 2-18-6z" fill="url(#g)"/>
-  <path d="M34 18c-6 2-12 8-14 14 6-4 12-6 18-4 2-4 0-8-4-10z" fill="#1f1f23" opacity="0.12"/>
-  <circle cx="42" cy="22" r="6" fill="#d9a28f" opacity="0.7"/>
+  <rect x="0" y="0" width="128" height="128" fill="url(#bgGrad)"/>
+  <ellipse cx="70" cy="96" rx="40" ry="10" fill="#d2c6a3" opacity="0.35"/>
+  <polygon points="22,40 84,26 110,42 48,56" fill="url(#topGrad)" stroke="#e1c98a" stroke-width="1.2"/>
+  <polygon points="22,40 48,56 48,92 22,76" fill="url(#frontGrad)" stroke="#e1c98a" stroke-width="1.2"/>
+  <polygon points="48,56 110,42 110,80 48,92" fill="url(#sideGrad)" stroke="#e1c98a" stroke-width="1.2"/>
+  <path d="M30 42 C48 34, 64 32, 82 30 M40 48 C56 42, 70 40, 96 40 M52 44 C60 50, 70 50, 84 48" fill="none" stroke="#e9d19b" stroke-width="1" stroke-linecap="round" opacity="0.9"/>
+  <rect x="37" y="60" width="14" height="10" rx="1.5" fill="#d9b35a" stroke="#b78d38" stroke-width="1"/>
+  <circle cx="44" cy="65" r="1.4" fill="#f4e0a6"/>
+  <rect x="42" y="63" width="4" height="4" rx="0.8" fill="#c3953e"/>
 </svg>

@@ -1,27 +1,37 @@
 const BASE_FORM_URL =
-  'https://docs.google.com/forms/d/1A8ES_lu8QJdf_iab0S2g92UMzk0jTP1pk6DZoWuHXg4/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSfnOY2G0RlzpVuwQD9f5NMZnt6WJUMKkFHqTVcse1M4rjZAbQ/viewform';
 
-const dateTimeFormatter = new Intl.DateTimeFormat('pl-PL', {
+const dateFormatter = new Intl.DateTimeFormat('pl-PL', {
   timeZone: 'Europe/Warsaw',
   year: 'numeric',
   month: '2-digit',
-  day: '2-digit',
+  day: '2-digit'
+});
+
+const timeFormatter = new Intl.DateTimeFormat('pl-PL', {
+  timeZone: 'Europe/Warsaw',
   hour: '2-digit',
   minute: '2-digit',
   hour12: false
 });
 
-export const formatPlDateTime = (date) => {
+const formatPlDate = (date) => {
   if (!(date instanceof Date) || Number.isNaN(date.valueOf())) {
     return '';
   }
 
-  return dateTimeFormatter.format(date).replace(',', '').replace(/\s+/g, ' ').trim();
+  return dateFormatter.format(date);
 };
 
-export const encode = (value) => encodeURIComponent(value ?? '');
+const formatPlTime = (date) => {
+  if (!(date instanceof Date) || Number.isNaN(date.valueOf())) {
+    return '';
+  }
 
-export const buildBookingUrl = ({ title, dateIso, city }) => {
+  return timeFormatter.format(date);
+};
+
+export const buildBookingUrl = ({ title, dateIso }) => {
   if (!title || !dateIso) {
     return '';
   }
@@ -31,16 +41,22 @@ export const buildBookingUrl = ({ title, dateIso, city }) => {
     return '';
   }
 
-  const formattedDate = formatPlDateTime(date);
+  const formattedDate = formatPlDate(date);
   if (!formattedDate) {
     return '';
   }
 
-  const titleParam = `entry.170014957=${encode(title)}`;
-  const dateParam = `entry.1744906145=${encode(formattedDate)}`;
-  const cityParam = `entry.1762235425=${encode(city ?? '')}`;
+  const formattedTime = formatPlTime(date);
 
-  return `${BASE_FORM_URL}?${titleParam}&${dateParam}&${cityParam}`;
+  const params = new URLSearchParams();
+  params.set('usp', 'pp_url');
+  params.set('entry.245361249', title);
+  params.set('entry.372576101', formattedDate);
+  if (formattedTime) {
+    params.set('entry.1825110953', formattedTime);
+  }
+
+  return `${BASE_FORM_URL}?${params.toString()}`;
 };
 
 export const pickUpcomingDate = (event) => {
