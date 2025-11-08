@@ -2,11 +2,11 @@ export const announcements = [
   {
     id: 'birthday-special',
     type: 'offer',
-    title: 'Urodzinowe warsztaty',
+    title: 'Birthday workshops',
     description:
-      'Świętuj swoje lub bliskich urodziny w kreatywny sposób! Zaproś znajomych na wyjątkowe warsztaty, pełne inspiracji i wspólnej zabawy przy tworzeniu pięknych dekoracji. Przy udziale pięciu lub więcej osób, cała grupa otrzymuje 20% zniżki na koszt warsztatów.',
-    note: 'Minimum 5 osób, rabat 20%',
-    ctaLabel: 'Zaplanuj urodzinowe warsztaty',
+      'Celebrate your birthday—or someone you love—in a creative way. Invite friends to a memorable workshop filled with inspiration and playful making. When five or more guests join, the whole group receives a 20% discount.',
+    note: 'Minimum 5 guests, 20% discount',
+    ctaLabel: 'Plan a birthday workshop',
     ctaHref: '#contact',
     image: '/images/birthday_workshop.jpg',
     priority: 0
@@ -14,11 +14,11 @@ export const announcements = [
   {
     id: 'education-offers',
     type: 'offer',
-    title: 'Warsztaty dla dzieci',
+    title: 'Workshops for children',
     description:
-      'Rozbudź kreatywność dzieci podczas warsztatów stworzonych z myślą o młodych twórcach! Zajęcia pozwolą im postawić pierwsze kroki w świecie decoupage – sztuki zdobienia, która rozwija wyobraźnię i zdolności manualne. Zapewniamy wszystkie materiały, inspirujący instruktaż krok po kroku oraz proste projekty, które uczestnicy zabiorą ze sobą do domu. Warsztaty z dojazdem do szkoły lub przedszkola prowadzone są w kameralnych grupach – maksymalnie 15 osób – co gwarantuje indywidualne wsparcie i twórczą, przyjazną atmosferę.',
-    note: 'Elastyczne terminy w placówkach',
-    ctaLabel: 'Zamów wizytę w szkole',
+      'Spark imagination with sessions designed especially for young makers. Kids take their first steps in decoupage—a decorative art that boosts creativity and fine motor skills. We bring every material, offer inspiring step-by-step guidance, and prepare projects they can proudly take home. We travel to your school or kindergarten and teach in cozy groups of up to 15 children for individual attention.',
+    note: 'Flexible dates at your school',
+    ctaLabel: 'Book a school visit',
     ctaHref: '#contact',
     image: '/images/workshop_for_kids.png',
     priority: 1
@@ -26,11 +26,11 @@ export const announcements = [
   {
     id: 'womens-day',
     type: 'offer',
-    title: 'Kreatywne spotkanie na Dzień Kobiet',
+    title: "Creative Women's Day gathering",
     description:
-      'Zaproś co najmniej trzy kobiety (max. 10) ze swojego zespołu lub rodziny na kreatywne spotkanie w naszej pracowni. To wyjątkowy czas, by wspólnie odpocząć, porozmawiać i stworzyć coś pięknego.',
-    note: 'Rezerwacje na marzec otwarte',
-    ctaLabel: 'Zarezerwuj miejsca',
+      'Invite at least three women (up to ten) from your team or family to a creative meetup in our studio. Enjoy time together to unwind, talk, and make something beautiful.',
+    note: 'January reservations now open',
+    ctaLabel: 'Reserve seats',
     ctaHref: '#contact',
     image: '/images/announcement_womens_day.jpg',
     priority: 2
@@ -38,11 +38,11 @@ export const announcements = [
   {
     id: 'gift-voucher',
     type: 'offer',
-    title: 'Podaruj kreatywny voucher',
+    title: 'Give a creative voucher',
     description:
-      'Podaruj komuś wyjątkowy prezent – voucher na warsztaty decoupage, który można wykorzystać podczas zajęć grupowych w naszej pracowni (w zgłoszeniu wystarczy podać numer vouchera) lub – po wcześniejszym uzgodnieniu – na warsztaty indywidualne. Jeśli chcesz otrzymać voucher w formie papierowej, skontaktuj się z nami – wyślemy go na Twój adres domowy na koszt Fanana-Art.',
-    note: 'Spersonalizowane spotkanie 1:1',
-    ctaLabel: 'Kup voucher',
+      'Surprise someone with a decoupage workshop voucher. It can be used for a group session in our studio (just provide the voucher number in the booking form) or, with prior arrangement, for a private class. Prefer a printed voucher? Let us know and we will mail it to you at our cost.',
+    note: 'valid for 6 months',
+    ctaLabel: 'Buy a voucher',
     ctaHref: '#contact',
     image: '/images/announcement_voucher.jpg',
     priority: 3

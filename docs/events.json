@@ -1,22 +1,23 @@
 [
   {
     "id": "2025-12-14-1600-wisla",
-    "title": "Decoupage w stylu boho",
+    "title": "Boho-style decoupage",
     "start": "2025-12-14T16:00:00+01:00",
-    "city": "Wisła",
+    "city": "Wisla",
     "pricePLN": 89,
     "capacity": 10,
     "seatsLeft": 4,
-    "bookUrl": "https://docs.google.com/forms/d/1A8ES_lu8QJdf_iab0S2g92UMzk0jTP1pk6DZoWuHXg4/viewform?entry.170014957=Decoupage%20w%20stylu%20boho&entry.1744906145=14.12.2025%2016:00&entry.1762235425=Wis%C5%82a"
+    "bookUrl": "https://docs.google.com/forms/d/1A8ES_lu8QJdf_iab0S2g92UMzk0jTP1pk6DZoWuHXg4/viewform?entry.170014957=Boho-style%20decoupage&entry.1744906145=14.12.2025%2016:00&entry.1762235425=Wis%C5%82a"
   },
   {
     "id": "2025-12-21-1600-ustron",
-    "title": "Świąteczne dekoracje",
+    "title": "Holiday decorations",
     "start": "2025-12-21T16:00:00+01:00",
-    "city": "Ustroń",
+    "city": "Ustron",
     "pricePLN": 99,
     "capacity": 12,
     "seatsLeft": 7,
-    "bookUrl": "https://docs.google.com/forms/d/1A8ES_lu8QJdf_iab0S2g92UMzk0jTP1pk6DZoWuHXg4/viewform?entry.170014957=%C5%9Awi%C4%85teczne%20dekoracje&entry.1744906145=21.12.2025%2016:00&entry.1762235425=Ustro%C5%84"
+    "bookUrl": "https://docs.google.com/forms/d/1A8ES_lu8QJdf_iab0S2g92UMzk0jTP1pk6DZoWuHXg4/viewform?entry.170014957=Holiday%20decorations&entry.1744906145=21.12.2025%2016:00&entry.1762235425=Ustro%C5%84"
   }
 ]
+

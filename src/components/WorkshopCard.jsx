@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   CalendarDays,
   Clock3,
@@ -13,8 +13,8 @@ const difficultyBadge = {
   Beginner: 'bg-emerald-50 text-emerald-700 border-emerald-100',
   Intermediate: 'bg-amber-50 text-amber-700 border-amber-100',
   Advanced: 'bg-rose-50 text-rose-700 border-rose-100',
-  'Początkujący': 'bg-emerald-50 text-emerald-700 border-emerald-100',
-  'Średnio zaawansowany': 'bg-amber-50 text-amber-700 border-amber-100',
+  'Poczatkujacy': 'bg-emerald-50 text-emerald-700 border-emerald-100',
+  'Srednio zaawansowany': 'bg-amber-50 text-amber-700 border-amber-100',
   'Zaawansowany': 'bg-rose-50 text-rose-700 border-rose-100'
 };
 
@@ -50,8 +50,8 @@ const WorkshopCard = ({ workshop, onInterested }) => {
   const hasContactCta = typeof onInterested === 'function';
   const priceDisplay =
     workshop.priceDisplay ??
-    (typeof workshop.price === 'number' ? `${workshop.price} PLN` : 'Do ustalenia');
-  const ctaLabel = hasContactCta ? 'Skontaktuj się z nami' : workshop.ctaLabel ?? 'Zarezerwuj miejsce';
+    (typeof workshop.price === 'number' ? `${workshop.price} PLN` : 'To be confirmed');
+  const ctaLabel = hasContactCta ? 'Skontaktuj sie z nami' : workshop.ctaLabel ?? 'Reserve a spot';
   const ctaDisabledLabel = workshop.ctaDisabledLabel ?? ctaLabel;
 
   const normalizedDescription = (workshop.description ?? '').trim();
@@ -117,7 +117,7 @@ const WorkshopCard = ({ workshop, onInterested }) => {
               onClick={() => setIsDescriptionExpanded((previous) => !previous)}
               className="mt-2 self-start text-sm font-semibold text-brand-forest transition hover:text-brand-forest/80"
             >
-              {isDescriptionExpanded ? 'Zwiń opis' : 'Zobacz więcej'}
+              {isDescriptionExpanded ? 'Hide description' : 'Read more'}
             </button>
           )}
         </div>
@@ -126,14 +126,14 @@ const WorkshopCard = ({ workshop, onInterested }) => {
           <div className="flex items-center gap-2 rounded-2xl bg-brand-cream/60 px-3 py-2">
             <Clock3 className="h-4 w-4 text-brand-forest" />
             <div>
-              <dt className="font-semibold text-brand-forest">Czas trwania</dt>
+              <dt className="font-semibold text-brand-forest">Duration</dt>
               <dd>{workshop.duration}</dd>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-2xl bg-brand-cream/60 px-3 py-2">
             <Wallet className="h-4 w-4 text-brand-forest" />
             <div>
-              <dt className="font-semibold text-brand-forest">Budżet</dt>
+              <dt className="font-semibold text-brand-forest">Budget</dt>
               <dd>
                 {priceDisplay}
                 {Array.isArray(workshop.pricingDetails) && workshop.pricingDetails.length > 0 && (
@@ -149,14 +149,14 @@ const WorkshopCard = ({ workshop, onInterested }) => {
           <div className="flex items-center gap-2 rounded-2xl bg-brand-cream/60 px-3 py-2">
             <SignalHigh className="h-4 w-4 text-brand-forest" />
             <div>
-              <dt className="font-semibold text-brand-forest">Poziom</dt>
+              <dt className="font-semibold text-brand-forest">Level</dt>
               <dd>{workshop.difficulty}</dd>
             </div>
           </div>
           <div className="flex items-start gap-2 rounded-2xl bg-brand-cream/60 px-3 py-2">
             <CalendarDays className="mt-0.5 h-4 w-4 text-brand-forest" />
             <div>
-              <dt className="font-semibold text-brand-forest">Najbliższe terminy</dt>
+              <dt className="font-semibold text-brand-forest">Next dates</dt>
               <dd className="space-y-1">
                 {upcomingSlots.map((slot, index) => {
                   const key = slot.display ?? `${slot.date ?? 'unscheduled'}-${slot.time ?? index}`;
@@ -164,7 +164,7 @@ const WorkshopCard = ({ workshop, onInterested }) => {
                     slot.display ??
                     (() => {
                       if (!slot?.date) {
-                        return 'Termin do uzgodnienia';
+                        return 'Date to be arranged';
                       }
                       const formatted = format(slot.date);
                       if (!slot?.time) {
@@ -212,6 +212,7 @@ const WorkshopCard = ({ workshop, onInterested }) => {
 };
 
 export default WorkshopCard;
+
 
 
 

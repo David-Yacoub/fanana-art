@@ -12,10 +12,10 @@ const FloatingChat = () => (
     rel="noreferrer"
     className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-transparent px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-2xl transition hover:brightness-95"
     style={{ backgroundColor: '#25D366' }}
-    aria-label="Dołącz do grupy WhatsApp Fanana-Art"
+    aria-label="Join the Fanana-Art WhatsApp group"
   >
     <WhatsappIcon className="h-5 w-5" />
-    <span className="hidden sm:inline">Dołącz do grupy</span>
+    <span className="hidden sm:inline">Join the group</span>
   </a>
 );
 

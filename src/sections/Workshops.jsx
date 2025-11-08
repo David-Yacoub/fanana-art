@@ -39,16 +39,16 @@ const Workshops = ({ onInterested }) => {
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Warsztaty w praktyce</p>
-            <h2 className="mt-2 font-display text-4xl text-brand-ink sm:text-5xl">Poznaj nasze warsztaty</h2>
+            <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Workshops in practice</p>
+            <h2 className="mt-2 font-display text-4xl text-brand-ink sm:text-5xl">Discover our workshops</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brand-ink/70">
-              Każde spotkanie to demonstracje krok po kroku, ćwiczenia z instruktorem i starannie dobrane materiały.
-              Zarezerwuj wcześniej, aby zagwarantować sobie idealny termin.
+              Every session includes step-by-step demos, instructor-led practice, and carefully selected materials.
+              Reserve ahead of time to secure the date that suits you best.
             </p>
           </div>
           <div className="flex items-center gap-3 rounded-full bg-brand-forest/10 px-4 py-2 text-sm font-medium text-brand-forest">
             <NotebookPen className="h-5 w-5" />
-            Aktualizujemy co tydzień
+            Updated every week
           </div>
         </div>
 
@@ -60,9 +60,9 @@ const Workshops = ({ onInterested }) => {
           </div>
         ) : (
           <div className="rounded-3xl border border-dashed border-brand-forest/30 bg-white/70 p-12 text-center">
-            <p className="font-display text-2xl text-brand-forest">Żaden warsztat nie spełnia wybranych filtrów… jeszcze!</p>
+            <p className="font-display text-2xl text-brand-forest">No workshop matches those filters... yet!</p>
             <p className="mt-2 text-sm text-brand-ink/70">
-              Spróbuj zmienić ustawienia filtrów lub skontaktuj się z nami, aby zaproponować termin dla swojej grupy.
+              Try adjusting the filters or contact us to suggest a date for your group.
             </p>
           </div>
         )}

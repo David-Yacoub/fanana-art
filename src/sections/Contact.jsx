@@ -35,7 +35,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
       return workshopOptions;
     }
 
-    const fallbackLabel = selectedWorkshop.title ?? 'Wybrana oferta';
+    const fallbackLabel = selectedWorkshop.title ?? 'Selected offer';
     return [
       {
         value: selectedWorkshop.id,
@@ -80,11 +80,11 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
       }
 
       setStatus('success');
-      setFeedbackMessage('Dziękujemy! Wiadomość właśnie do nas dotarła – skontaktujemy się wkrótce.');
+      setFeedbackMessage('Thank you! Your message just reached us and we will reply shortly.');
       setForm(initialFormState);
     } catch (error) {
       setStatus('error');
-      setFeedbackMessage('Ups! Coś poszło nie tak. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.');
+      setFeedbackMessage('Oops! Something went wrong. Please try again or reach out directly.');
     }
   };
 
@@ -95,14 +95,14 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
       <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-brand-ink/10 bg-white/85 p-10 shadow-xl backdrop-blur">
         <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
           <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Kontakt</p>
+            <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Contact</p>
             <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">
-              Gotowi na wspólne tworzenie?
+              Ready to create together?
             </h2>
             <p className="text-sm leading-relaxed text-brand-ink/75">
-              Napisz, który warsztat Cię zainteresował lub opowiedz o wymarzonym projekcie. Odpowiadamy w ciągu dwóch dni
-              roboczych, przesyłając dostępne terminy, listę materiałów i kolejne kroki. Organizujemy również wyjazdowe
-              spotkania dla zespołów 3–15 osób na terenie południowej Polski.
+              Tell us which workshop caught your attention or describe your dream project. We reply within two business days
+              with available dates, a materials list, and clear next steps. We also organize off-site sessions for teams of
+              3-15 people across southern Poland.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
@@ -122,7 +122,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
               </a>
               <div className="flex items-center gap-3 rounded-3xl border border-brand-forest/10 bg-brand-cream/70 px-4 py-3 text-sm text-brand-ink/80">
                 <MapPin className="h-5 w-5 text-brand-forest" />
-                Pracownia Fanana-Art, Wisła
+                Fanana-Art Studio, Wisla
               </div>
               <a
                 href="https://chat.whatsapp.com/IEiJEn6IXhfLWkDMYJxvOL?mode=wwt"
@@ -131,7 +131,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
                 rel="noreferrer"
               >
                 <MessageCircle className="h-5 w-5" />
-                Dołącz do grupy WhatsApp
+                Join the WhatsApp group
               </a>
             </div>
           </div>
@@ -139,13 +139,13 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="text-sm font-semibold text-brand-forest">
-                Imię i nazwisko
+                Full name
                 <input
                   required
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Twoje imię i nazwisko"
+                  placeholder="Your full name"
                   className="mt-2 w-full rounded-2xl border border-brand-ink/10 bg-white/90 px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20"
                 />
               </label>
@@ -157,14 +157,14 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="twojemail@example.com"
+                  placeholder="you@example.com"
                   className="mt-2 w-full rounded-2xl border border-brand-ink/10 bg-white/90 px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20"
                 />
               </label>
             </div>
 
             <label className="text-sm font-semibold text-brand-forest">
-              Telefon (opcjonalnie)
+              Phone (optional)
               <input
                 name="phone"
                 value={form.phone}
@@ -175,14 +175,14 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
             </label>
 
             <label className="text-sm font-semibold text-brand-forest">
-              Preferowany warsztat
+              Preferred workshop
               <select
                 name="preferredWorkshop"
                 value={form.preferredWorkshop}
                 onChange={handleChange}
                 className="mt-2 w-full rounded-2xl border border-brand-ink/10 bg-white/90 px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20"
               >
-                <option value="">Dopiero poznaję ofertę</option>
+                <option value="">Still exploring the offer</option>
                 {mergedWorkshopOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
@@ -192,14 +192,14 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
             </label>
 
             <label className="text-sm font-semibold text-brand-forest">
-              Wiadomość
+              Message
               <textarea
                 required
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows="4"
-                placeholder="Opisz cele, liczbę uczestników lub preferowane terminy."
+                placeholder="Describe your goals, group size, or preferred dates."
                 className="mt-2 w-full rounded-2xl border border-brand-ink/10 bg-white/90 px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-forest focus:ring-2 focus:ring-brand-forest/20"
               />
             </label>
@@ -210,7 +210,7 @@ const Contact = forwardRef(({ workshops, selectedWorkshop }, ref) => {
               className="inline-flex items-center gap-2 rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-forest/90 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Send className="h-4 w-4" />
-              {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+              {isSubmitting ? 'Sending...' : 'Send message'}
             </button>
 
             {status === 'success' && (

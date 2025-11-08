@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const formatter = new Intl.DateTimeFormat('pl-PL', {
+const formatter = new Intl.DateTimeFormat('en-GB', {
   dateStyle: 'long',
   timeStyle: 'short',
   timeZone: 'Europe/Warsaw'
@@ -71,11 +71,11 @@ const UpcomingSessions = () => {
     }
 
     if (status === 'error') {
-      return <p className="mt-6 text-sm font-medium text-rose-600">Nie udało się wczytać terminów.</p>;
+      return <p className="mt-6 text-sm font-medium text-rose-600">We couldn't load the upcoming dates.</p>;
     }
 
     if (events.length === 0) {
-      return <p className="mt-6 text-sm text-brand-ink/70">Brak zaplanowanych warsztatów.</p>;
+      return <p className="mt-6 text-sm text-brand-ink/70">No workshops are scheduled yet.</p>;
     }
 
     return (
@@ -89,7 +89,7 @@ const UpcomingSessions = () => {
             event.pricePLN != null ? `${event.pricePLN} PLN` : null
           ]
             .filter(Boolean)
-            .join(' • ');
+            .join(' · ');
 
           return (
             <li
@@ -106,7 +106,7 @@ const UpcomingSessions = () => {
                   <p className="text-sm text-brand-ink/70">{details}</p>
                   {event.seatsLeft != null && (
                     <p className="text-xs font-medium uppercase tracking-wide text-brand-forest">
-                      Dostępne miejsca: {event.seatsLeft}
+                      Spots available: {event.seatsLeft}
                     </p>
                   )}
                 </div>
@@ -116,9 +116,9 @@ const UpcomingSessions = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex w-full items-center justify-center rounded-full bg-brand-forest px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white shadow-md transition hover:bg-brand-forest/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-forest sm:w-auto"
-                    aria-label={`Zapisz się na ${event.title}`}
+                    aria-label={`Reserve a spot for ${event.title}`}
                   >
-                    Zapisz się
+                    Reserve a spot
                   </a>
                 </div>
               </div>
@@ -133,13 +133,12 @@ const UpcomingSessions = () => {
     <section aria-labelledby="upcoming" className="mt-24 px-6 sm:px-10 lg:px-12">
       <div className="mx-auto max-w-3xl rounded-[2rem] border border-brand-ink/10 bg-white/80 p-6 shadow-lg backdrop-blur">
         <div className="space-y-2">
-          <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Harmonogram</p>
+          <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Schedule</p>
           <h2 id="upcoming" className="font-display text-3xl text-brand-ink">
-            Najbliższe warsztaty
+            Upcoming workshops
           </h2>
           <p className="text-sm text-brand-ink/70">
-            Rezerwuj miejsce, zanim zapełnią się wszystkie terminy. Każde spotkanie obejmuje materiały i opiekę
-            instruktora.
+            Reserve your place before the schedule fills up. Every session includes materials and guidance from the instructor.
           </p>
         </div>
         {content}

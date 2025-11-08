@@ -3,13 +3,12 @@ import { CalendarDays, Clock3, Sparkles, Users, Wallet } from 'lucide-react';
 import { scheduleWorkshops } from '../data/scheduleWorkshops';
 import { buildBookingFormUrl, parseWorkshopDateTime } from '../utils/bookingForm';
 
-const longDateFormatter = new Intl.DateTimeFormat('pl-PL', {
+const longDateFormatter = new Intl.DateTimeFormat('en-GB', {
   weekday: 'long',
   year: 'numeric',
   month: 'long',
   day: 'numeric'
 });
-
 
 const Schedule = () => {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -36,12 +35,12 @@ const Schedule = () => {
       <div className="mx-auto max-w-6xl space-y-12 rounded-[2.5rem] border border-brand-ink/10 bg-white/85 p-8 shadow-xl backdrop-blur sm:p-12 lg:p-16">
         <div className="space-y-4">
           <span className="inline-flex rounded-full bg-brand-forest/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-brand-forest">
-            Zaplanuj wcześniej
+            Plan ahead
           </span>
           <div className="max-w-3xl space-y-3">
-            <h2 className="font-display text-4xl text-brand-ink sm:text-5xl">Harmonogram warsztatów i rezerwacje</h2>
+            <h2 className="font-display text-4xl text-brand-ink sm:text-5xl">Workshop schedule and bookings</h2>
             <p className="text-sm leading-relaxed text-brand-ink/70">
-              Zobacz nadchodzące spotkania, dodaj je do kalendarza i zarezerwuj termin dla siebie lub swojej grupy w kilka chwil.
+              See the upcoming sessions, add them to your calendar, and reserve a date for yourself or your group in just a few minutes.
             </p>
           </div>
           <button
@@ -51,14 +50,14 @@ const Schedule = () => {
             aria-expanded={showCalendar}
           >
             <CalendarDays className="h-4 w-4 text-white" aria-hidden="true" />
-            <span>{showCalendar ? 'Ukryj kalendarz' : 'Pokaż kalendarz'}</span>
+            <span>{showCalendar ? 'Hide calendar' : 'Show calendar'}</span>
           </button>
         </div>
 
         {showCalendar && (
           <div className="overflow-hidden rounded-3xl border border-brand-ink/10 shadow-inner">
             <iframe
-              title="Kalendarz warsztatów Fanana-Art"
+              title="Fanana-Art workshop calendar"
               src="https://calendar.google.com/calendar/embed?src=c_ae8f1ca5bfc7a8060b77f32a583dbdf7ff75fe39772db8dd28d464fd92898423%40group.calendar.google.com&ctz=Europe%2FWarsaw"
               width="100%"
               height="600"
@@ -70,12 +69,11 @@ const Schedule = () => {
         <div className="space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Zarezerwuj termin</p>
-              <h3 className="font-display text-2xl text-brand-ink sm:text-3xl">Zarezerwuj miejsca dla swojej grupy</h3>
+              <p className="text-sm uppercase tracking-[0.4em] text-brand-forest">Book a date</p>
+              <h3 className="font-display text-2xl text-brand-ink sm:text-3xl">Reserve space for your group</h3>
             </div>
             <p className="max-w-xl text-sm text-brand-ink/70">
-              Wybierz dogodną datę. Formularz rezerwacyjny otworzy się w nowej karcie, abyś mógł spokojnie uzupełnić
-              szczegóły.
+              Choose the most convenient day. The booking form opens in a new tab so you can fill in every detail at your own pace.
             </p>
           </div>
 
@@ -130,7 +128,7 @@ const Schedule = () => {
                               </span>
                             )}
                             <span className="inline-flex items-center gap-1 rounded-full border border-brand-forest/15 px-3 py-1 text-brand-forest/80">
-                              Warsztat kreatywny
+                              Creative workshop
                             </span>
                           </div>
                           <h4 className="font-display text-xl text-brand-ink group-hover:text-brand-forest">{title}</h4>
@@ -141,14 +139,14 @@ const Schedule = () => {
                           <div className="flex items-center gap-2">
                             <CalendarDays className="h-4 w-4 text-brand-forest" />
                             <div>
-                              <dt className="sr-only">Data</dt>
+                              <dt className="sr-only">Date</dt>
                               <dd>{longDate}</dd>
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
                             <Clock3 className="h-4 w-4 text-brand-forest" />
                             <div>
-                              <dt className="sr-only">Godzina</dt>
+                              <dt className="sr-only">Time</dt>
                               <dd>
                                 {timeRange} &middot; {duration}
                               </dd>
@@ -157,7 +155,7 @@ const Schedule = () => {
                           <div className="flex items-center gap-2">
                             <Wallet className="h-4 w-4 text-brand-forest" />
                             <div>
-                              <dt className="sr-only">Budżet</dt>
+                              <dt className="sr-only">Budget</dt>
                               <dd>{priceDisplay}</dd>
                             </div>
                           </div>
@@ -165,9 +163,9 @@ const Schedule = () => {
                             <div className="flex items-center gap-2">
                               <Users className="h-4 w-4 text-brand-forest" />
                               <div>
-                                <dt className="sr-only">Dostepnosc miejsc</dt>
+                                <dt className="sr-only">Seat availability</dt>
                                 <dd>
-                                  {availableSpots}/{capacity} miejsc
+                                  {availableSpots}/{capacity} spots
                                 </dd>
                               </div>
                             </div>
@@ -180,7 +178,7 @@ const Schedule = () => {
                           rel="noreferrer"
                           className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-brand-forest px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow transition hover:bg-brand-forest/90"
                         >
-                          Zarezerwuj termin
+                          Reserve a spot
                         </a>
                       </div>
                     </article>
@@ -190,10 +188,10 @@ const Schedule = () => {
             </div>
           ) : (
             <div className="rounded-3xl border border-dashed border-brand-forest/30 bg-white/70 p-12 text-center">
-              <p className="font-display text-2xl text-brand-forest">Nowe terminy już wkrótce</p>
+              <p className="font-display text-2xl text-brand-forest">New dates coming soon</p>
               <p className="mt-2 text-sm text-brand-ink/70">
-                Właśnie planujemy kolejną serię warsztatów. Zajrzyj ponownie lub napisz do nas, jeśli chcesz zamówić
-                zajęcia dla swojej grupy.
+                We're planning another series of workshops right now. Check back soon or write to us if you'd like to arrange
+                a session for your group.
               </p>
             </div>
           )}
@@ -204,12 +202,4 @@ const Schedule = () => {
 };
 
 export default Schedule;
-
-
-
-
-
-
-
-
 

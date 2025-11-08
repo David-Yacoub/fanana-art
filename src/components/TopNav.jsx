@@ -1,8 +1,8 @@
 const navItems = [
-  { label: 'Harmonogram', href: '#schedule' },
-  { label: 'Warsztaty', href: '#workshops' },
-  { label: 'Galeria', href: '#gallery' },
-  { label: 'Kontakt', href: '#contact' },
+  { label: 'Schedule', href: '#schedule' },
+  { label: 'Workshops', href: '#workshops' },
+  { label: 'Gallery', href: '#gallery' },
+  { label: 'Contact', href: '#contact' },
   { label: 'Blog', href: 'https://ania-tdb.blogspot.com/', external: true }
 ];
 
@@ -42,7 +42,7 @@ const TopNav = () => {
             })}
           </div>
           <span className="rounded-full bg-brand-forest/10 px-3 py-1 text-[11px] tracking-normal text-brand-forest sm:text-xs">
-            Organizujemy warsztaty wyjazdowe dla firm, szkół i wydarzeń
+            We organize off-site workshops for companies, schools, and events
           </span>
         </div>
       </div>

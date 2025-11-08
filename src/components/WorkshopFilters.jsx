@@ -16,20 +16,20 @@ const WorkshopFilters = ({ filters, onChange, types, difficulties, dates, priceO
         <Filter className="h-5 w-5" />
       </div>
       <div>
-        <p className="font-display text-lg text-brand-ink">Znajdź idealny warsztat dla siebie</p>
-        <p className="text-xs uppercase tracking-[0.3em] text-brand-forest/70">Filtruj według zainteresowań</p>
+        <p className="font-display text-lg text-brand-ink">Find the perfect workshop for you</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-brand-forest/70">Filter by interests</p>
       </div>
     </div>
 
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <label className="flex flex-col gap-2">
-        <Label>Typ</Label>
+        <Label>Type</Label>
         <select
           value={filters.type}
           onChange={(event) => onChange({ ...filters, type: event.target.value })}
           className={baseSelectClass}
         >
-          <option value="All">Wszystkie</option>
+          <option value="All">All</option>
           {types.map((type) => (
             <option key={type} value={type}>
               {type}
@@ -39,13 +39,13 @@ const WorkshopFilters = ({ filters, onChange, types, difficulties, dates, priceO
       </label>
 
       <label className="flex flex-col gap-2">
-        <Label>Poziom</Label>
+        <Label>Level</Label>
         <select
           value={filters.difficulty}
           onChange={(event) => onChange({ ...filters, difficulty: event.target.value })}
           className={baseSelectClass}
         >
-          <option value="All">Wszystkie</option>
+          <option value="All">All</option>
           {difficulties.map((difficulty) => (
             <option key={difficulty} value={difficulty}>
               {difficulty}
@@ -55,13 +55,13 @@ const WorkshopFilters = ({ filters, onChange, types, difficulties, dates, priceO
       </label>
 
       <label className="flex flex-col gap-2">
-        <Label>Data</Label>
+        <Label>Date</Label>
         <select
           value={filters.date}
           onChange={(event) => onChange({ ...filters, date: event.target.value })}
           className={baseSelectClass}
         >
-          <option value="All">Dowolna data</option>
+          <option value="All">Any date</option>
           {dates.map((dateOption) => (
             <option key={dateOption.value} value={dateOption.value}>
               {dateOption.label}
@@ -71,7 +71,7 @@ const WorkshopFilters = ({ filters, onChange, types, difficulties, dates, priceO
       </label>
 
       <label className="flex flex-col gap-2">
-        <Label>Budżet</Label>
+        <Label>Budget</Label>
         <select
           value={filters.price}
           onChange={(event) => onChange({ ...filters, price: event.target.value })}

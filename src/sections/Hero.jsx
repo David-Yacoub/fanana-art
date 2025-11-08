@@ -4,32 +4,32 @@ import { buildBookingFormUrl, parseWorkshopDateTime } from '../utils/bookingForm
 
 const featureHighlights = [
   {
-    title: 'Warsztaty decoupage',
-    copy: 'Oferujemy warsztaty grupowe w pracowni (3–8 osób) oraz warsztaty wyjazdowe (3–15 osób). Z nami spędzisz kreatywny czas w miłej atmosferze, przy kawie i ciastku.',
+    title: 'Decoupage workshops',
+    copy: 'We host small-group sessions in the studio (3-8 people) and off-site workshops (3-15 people). Expect a creative time together in a cozy setting with coffee and treats.',
     image: '/images/hero_small_group.jpg',
-    alt: 'Warsztaty dla dzieci i dorosłych'
+    alt: 'Workshops for kids and adults'
   },
   {
-    title: 'Materiały w cenie zajęć',
-    copy: 'Pracownia zapewnia wszystkie niezbędne materiały — farby, serwetki, papiery ryżowe, różne rodzaje lakierów, kleje do spękań oraz dodatki do ozdabiania. Wystarczy, że przyjdziesz i dasz się zainspirować!',
+    title: 'Materials included',
+    copy: 'We provide every supply you need—paints, napkins, rice papers, specialty varnishes, crackle glues, and decorative accents. Simply arrive and let yourself be inspired.',
     image: '/images/hero_materials.jpg',
-    alt: 'Profesjonalne materiały do decoupage'
+    alt: 'Professional decoupage materials'
   },
   {
-    title: 'Wyjdziesz z dziełem, które pokochasz',
-    copy: 'Stwórz swoje własne dzieło i zabierz je do domu. Ozdób nim swoje wnętrze lub podaruj komuś bliskiemu w prezencie.',
+    title: 'Leave with a piece you love',
+    copy: 'Create your own artwork and take it home. Style your space with it or gift it to someone special.',
     image: '/images/leave_with_the_art_you_love.jpg',
-    alt: 'Dekoracyjna szkatułka wykonana podczas warsztatów'
+    alt: 'Decorative jewelry box made during a workshop'
   }
 ];
 
-const heroDateFormatter = new Intl.DateTimeFormat('pl-PL', {
+const heroDateFormatter = new Intl.DateTimeFormat('en-GB', {
   weekday: 'long',
   month: 'long',
   day: 'numeric'
 });
 
-const heroTimeFormatter = new Intl.DateTimeFormat('pl-PL', {
+const heroTimeFormatter = new Intl.DateTimeFormat('en-GB', {
   hour: '2-digit',
   minute: '2-digit',
   hour12: false
@@ -76,30 +76,30 @@ const Hero = ({ onCtaClick }) => (
     <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-10 px-6 py-24 sm:px-10 lg:px-12">
       <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.3em] text-brand-forest/70">
         <Sparkles className="h-5 w-5" />
-        Warsztaty Fanana-Art
+        Fanana-Art workshops
       </div>
 
       <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
         <div className="max-w-3xl flex-1 space-y-6 rounded-3xl bg-white/85 p-6 shadow-lg backdrop-blur">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <h1 className="font-display text-4xl leading-tight text-brand-ink sm:text-5xl lg:text-6xl">
-            Pracownia Fanana-Art
+            Fanana-Art Studio
           </h1>
           <div className="flex flex-col gap-3 sm:max-w-xs">
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-forest/20 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-brand-forest shadow-sm">
               <Sparkles className="h-4 w-4" />
-              Wszystkie zdjecia to nasze prace
+              Every photo shows our own work
             </div>
           </div>
         </div>
         <p className="max-w-xl text-lg leading-relaxed text-brand-ink/80 sm:text-xl">
-          Warsztaty decoupage – odkryj radość tworzenia rękami i sercem. Zapraszamy do świata, w którym papier, kolory i
-          faktury opowiadają historie.
+          Discover decoupage workshops where creating with your hands and heart feels effortless. Step into a world where
+          paper, colors, and textures tell stories.
         </p>
         <p className="max-w-xl text-lg leading-relaxed text-brand-ink/80 sm:text-xl">
-          Pod czułym okiem instruktorki każdy warsztat staje się podróżą przez technikę, inspirację i wspólne tworzenie.
-          W kameralnej, ciepłej atmosferze pracowni odkryjesz, jak z prostych materiałów powstają wyjątkowe dzieła – pełne
-          duszy, pasji i piękna.
+          With the gentle guidance of our instructor, each session becomes a journey through technique, inspiration, and
+          shared making. In the studio's warm, intimate atmosphere you will see how simple materials transform into
+          soulful, beautiful pieces.
         </p>
         <div className="flex flex-wrap gap-4">
           <button
@@ -107,14 +107,14 @@ const Hero = ({ onCtaClick }) => (
             className="inline-flex items-center gap-2 rounded-full bg-brand-forest px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-forest/90"
           >
             <Paintbrush2 className="h-5 w-5" />
-            Zobacz warsztaty
+            View workshops
           </button>
           <a
             href="#activities"
             className="inline-flex items-center gap-2 rounded-full border border-brand-ink/10 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-brand-ink transition hover:border-brand-forest hover:text-brand-forest"
           >
             <Palette className="h-5 w-5" />
-            Aktualności
+            Updates
           </a>
         </div>
         </div>
@@ -126,7 +126,7 @@ const Hero = ({ onCtaClick }) => (
             className="group w-full max-w-md rounded-3xl border border-brand-forest/15 bg-white/90 p-6 text-left shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             <div className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-forest/70">
-              Najblizsze warsztaty
+              Next workshops
             </div>
             <div className="mt-4 flex items-center gap-3">
               {nearestWorkshop.image && (
@@ -152,14 +152,14 @@ const Hero = ({ onCtaClick }) => (
               <span>{nearestWorkshop.shortTime}</span>
             </div>
             <div className="mt-5 inline-flex items-center gap-3 text-sm font-semibold text-brand-forest">
-              <span>Dostepne miejsca</span>
+              <span>Spots available</span>
               <span className="rounded-full bg-brand-forest/10 px-3 py-1 text-brand-forest">
                 {nearestWorkshop.availableSpots}/{nearestWorkshop.capacity}
               </span>
             </div>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-forest">
-              Przejdz do rezerwacji
-              <span aria-hidden="true">→</span>
+              Go to booking
+              <span aria-hidden="true">-></span>
             </span>
           </a>
         )}

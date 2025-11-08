@@ -2,8 +2,8 @@ import { Facebook, Instagram, BookOpen } from 'lucide-react';
 
 const socials = [
   { id: 'instagram', label: 'Instagram @fanana.art', icon: Instagram, link: 'https://www.instagram.com/fanana_art.workshop/' },
-  { id: 'facebook', label: 'Fanana-Art na Facebooku', icon: Facebook, link: 'https://www.facebook.com/profile.php?id=61583522277270' },
-  { id: 'blog', label: 'Nasz Blog', icon: BookOpen, link: 'https://ania-tdb.blogspot.com/' }
+  { id: 'facebook', label: 'Fanana-Art on Facebook', icon: Facebook, link: 'https://www.facebook.com/profile.php?id=61583522277270' },
+  { id: 'blog', label: 'Our blog', icon: BookOpen, link: 'https://ania-tdb.blogspot.com/' }
 ];
 
 const Footer = () => (
@@ -13,30 +13,30 @@ const Footer = () => (
         <div className="space-y-3">
           <h3 className="font-display text-2xl">Fanana-Art</h3>
           <p className="text-sm text-white/70">
-            Warsztaty decoupage i mieszanych technik dla osób, które kochają dopracowane detale i ciepłą atmosferę.
+            Decoupage and mixed-media workshops for people who love refined details and a warm atmosphere.
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Godziny pracowni</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Studio hours</p>
           <ul className="mt-3 space-y-1 text-sm text-white/75">
           
             <li></li>
             <li></li>
-            <li>Zajęcia indywidualne na życzenie</li>
+            <li>Private sessions on request</li>
           </ul>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Odwiedź nas</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Visit us</p>
           <p className="mt-3 text-sm text-white/75">
             Pracownia Fanana-Art
             <br />
-            Centrum Wisły
+            Wisla Center
             <br />
-            Wisła, Polska
+            Wisla, Poland
           </p>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Bądźmy w kontakcie</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Stay in touch</p>
           <ul className="mt-4 space-y-3 text-sm">
             {socials.map((social) => (
               <li key={social.id}>
@@ -55,7 +55,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-10 border-t border-white/10 pt-4 text-xs text-white/60">
-        © {new Date().getFullYear()} Fanana-Art. Tworzymy z miłością w Wiśle.
+        © {new Date().getFullYear()} Fanana-Art. We create with love in Wisla.
       </div>
     </div>
   </footer>

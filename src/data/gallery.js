@@ -1,68 +1,69 @@
-﻿export const galleryItems = [
+export const galleryItems = [
   {
     id: "gallery-love-beyond-words",
-    title: "Tabliczka \"Milosc bez slow\"",
+    title: "Plaque \"Love Beyond Words\"",
     image: "/images/gallery_love_beyond_words.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-live-every-moment",
-    title: "Tabliczka \"Zyj kazda chwila\"",
+    title: "Plaque \"Live Every Moment\"",
     image: "/images/gallery_live_every_moment.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-journey-quote",
-    title: "Tabliczka \"Tu zaczyna sie podroz\"",
+    title: "Plaque \"The Journey Starts Here\"",
     image: "/images/gallery_journey_quote.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-lavendar-box",
-    title: "Lawendowe pudelko na drobiazgi",
+    title: "Lavender keepsake box",
     image: "/images/gallery_lavendar_box.jpg",
-    categories: ["Pudelka"]
+    categories: ["Boxes"]
   },
   {
     id: "gallery-floral-box",
-    title: "Kwiatowe pudelko dekoracyjne",
+    title: "Floral decorative box",
     image: "/images/gallery_floral_box.jpg",
-    categories: ["Pudelka"]
+    categories: ["Boxes"]
   },
   {
     id: "gallery-tea-box",
-    title: "Pudelko na herbate z motywem imbrykow",
+    title: "Teapot motif tea box",
     image: "/images/tea_box_workshop.jpg",
-    categories: ["Pudelka"]
+    categories: ["Boxes"]
   },
   {
     id: "gallery-rose-clock",
-    title: "Zegar z rozanym ogrodem",
+    title: "Rose garden clock",
     image: "/images/gallery_rose_clock.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-flower-clock",
-    title: "Kwiatowy zegar scienny",
+    title: "Floral wall clock",
     image: "/images/gallery_flower_clock.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-pastel-clock",
-    title: "Pastelowy zegar w kwiaty",
+    title: "Pastel floral clock",
     image: "/images/gallery_pastel_clock.jpg",
-    categories: ["Dzieci"]
+    categories: ["Kids"]
   },
   {
     id: "gallery-candle-holder",
-    title: "Swiecznik z motywem lawendy",
+    title: "Lavender candle holder",
     image: "/images/picture_candle_holder_regular_workshop.jpg",
-    categories: ["Swieczniki"]
+    categories: ["Candle holders"]
   },
   {
     id: "gallery-earrings",
-    title: "Kolczyki w stylu retro",
+    title: "Retro-style earrings",
     image: "/images/Earings_workshop.jpg",
-    categories: ["Kolczyki"]
+    categories: ["Earrings"]
   }
 ];
+

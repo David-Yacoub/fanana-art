@@ -8,9 +8,9 @@ const iconMap = {
 };
 
 const badgeCopy = {
-  offer: 'Oferta',
-  info: 'Aktualnosc',
-  new: 'Nowosc'
+  offer: 'Offer',
+  info: 'Update',
+  new: 'New'
 };
 
 const buildDescriptionPreview = (text) => {
@@ -61,11 +61,11 @@ const Announcements = ({ data, onInterested }) => {
         <div className="relative space-y-10 px-8 py-12 sm:px-12 lg:px-16">
           <div className="max-w-3xl space-y-4">
             <span className="inline-flex rounded-full bg-brand-forest/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-brand-forest">
-              Aktualnosci
+              Updates
             </span>
-            <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">Poznaj nasze aktualne propozycje</h2>
+            <h2 className="font-display text-3xl text-brand-ink sm:text-4xl">Explore our current offers</h2>
             <p className="text-sm leading-relaxed text-brand-ink/70">
-              Odkryj zajęcia w pracowni, wyjazdowe programy oraz sezonowe wydarzenia, które możesz zarezerwować już dziś.
+              Discover in-studio classes, off-site programs, and seasonal events you can secure today.
             </p>
           </div>
 
@@ -103,7 +103,7 @@ const Announcements = ({ data, onInterested }) => {
                       <div className="space-y-2">
                         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-forest">
                           <span className="rounded-full bg-brand-forest/10 px-3 py-1">
-                            {badgeCopy[announcement.type] ?? 'Aktualnosc'}
+                            {badgeCopy[announcement.type] ?? 'Update'}
                           </span>
                           {announcement.note && (
                             <span className="rounded-full border border-brand-forest/15 px-3 py-1 text-brand-forest/80">
@@ -124,7 +124,7 @@ const Announcements = ({ data, onInterested }) => {
                           onClick={() => toggleExpanded(announcement.id)}
                           className="mt-3 text-sm font-semibold text-brand-forest transition hover:text-brand-forest/80"
                         >
-                          {isExpanded ? 'Zwin opis' : 'Zobacz wiecej'}
+                          {isExpanded ? 'Hide description' : 'Read more'}
                         </button>
                       )}
                     </div>
