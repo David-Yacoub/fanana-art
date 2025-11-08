@@ -51,7 +51,7 @@ const WorkshopCard = ({ workshop, onInterested }) => {
   const priceDisplay =
     workshop.priceDisplay ??
     (typeof workshop.price === 'number' ? `${workshop.price} PLN` : 'To be confirmed');
-  const ctaLabel = hasContactCta ? 'Skontaktuj sie z nami' : workshop.ctaLabel ?? 'Reserve a spot';
+  const ctaLabel = hasContactCta ? 'Contact us' : workshop.ctaLabel ?? 'Reserve a spot';
   const ctaDisabledLabel = workshop.ctaDisabledLabel ?? ctaLabel;
 
   const normalizedDescription = (workshop.description ?? '').trim();
