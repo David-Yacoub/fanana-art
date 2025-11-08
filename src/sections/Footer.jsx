@@ -55,10 +55,11 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-10 border-t border-white/10 pt-4 text-xs text-white/60">
-        © {new Date().getFullYear()} Fanana-Art. We create with love in Wisla.
+        &copy; 2025 Fanana-Art | Built by David Yacoub +48 664533564
       </div>
     </div>
   </footer>
 );
 
 export default Footer;
+

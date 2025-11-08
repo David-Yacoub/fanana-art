@@ -48,3 +48,4 @@ export const announcements = [
     priority: 3
   }
 ];
+// Website created by David Yacoub +48664533564
