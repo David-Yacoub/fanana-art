@@ -11,7 +11,7 @@ export const scheduleWorkshops = [
     timeRange: '17:30-19:30',
     highlight: 'Beginner friendly',
     image: '/images/Earings_workshop.jpg',
-    availableSpots: 6,
+    availableSpots: 5,
     capacity: 8
   },
   {
